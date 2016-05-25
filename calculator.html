@@ -75,36 +75,66 @@
 <script type="text/javascript"> 
   function Calculator(){
     'use strict';
-    let result = "";
+    let result = "0";
     
     this.input = ko.observable(result);
 
     this.addSeven = ()=>{
-      result+="7"
+      if (result === "0"){
+        result = "7";
+        this.input(result)
+        return;
+      }
+      result+="7";
       this.input(result)
     }
 
     this.addEight = ()=>{
+      if (result === "0"){
+        result = "8";
+        this.input(result)
+        return;
+      }
       result+="8"
       this.input(result)
     }
 
     this.addNine = ()=>{
+      if (result === "0"){
+        result = "9";
+        this.input(result)
+        return;
+      }
       result+="9"
       this.input(result)
     }
 
     this.addFour = ()=>{
+      if (result === "0"){
+        result = "4";
+        this.input(result)
+        return;
+      }
       result+="4"
       this.input(result)
     }
 
     this.addFive = ()=>{
+      if (result === "0"){
+        result = "5";
+        this.input(result)
+        return;
+      }
       result+="5"
       this.input(result)
     }
 
     this.addSix = ()=>{
+      if (result === "0"){
+        result = "6";
+        this.input(result)
+        return;
+      }
       result+="6"
       this.input(result)
     }
@@ -118,16 +148,31 @@
     }
 
     this.addOne = ()=>{
+      if (result === "0"){
+        result = "1";
+        this.input(result)
+        return;
+      }
       result+="1"
       this.input(result)
     }
 
     this.addTwo = ()=>{
+      if (result === "0"){
+        result = "2";
+        this.input(result)
+        return;
+      }
       result+="2"
       this.input(result)
     }
 
     this.addThree = ()=>{
+      if (result === "0"){
+        result = "3";
+        this.input(result)
+        return;
+      }
       result+="3"
       this.input(result)
     }
@@ -176,7 +221,7 @@
 //--------------CLEAR--------------------------
 this.clear = ()=>{
 
-  result = ""
+  result = "0"
   this.input(result)
 }
 
