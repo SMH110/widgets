@@ -79,6 +79,7 @@
     
     this.input = ko.observable(result);
 
+//-------------------------------------------------  ADD NUMBER -----------------------
     this.addSeven = ()=>{
       if (result === "0"){
         result = "7";
@@ -139,14 +140,6 @@
       this.input(result)
     }
 
-    this.addPlus = ()=>{
-      let lastChar = +result[result.length -1];
-      if (result === "" || isNaN(lastChar)) return;
-            
-      result+="+"
-      this.input(result)
-    }
-
     this.addOne = ()=>{
       if (result === "0"){
         result = "1";
@@ -177,59 +170,66 @@
       this.input(result)
     }
 
-    this.addMinus = ()=>{
-       let lastChar = +result[result.length -1];
-      if (result === "" || isNaN(lastChar)) return;
 
-
-      result+="-";
-      this.input(result);
-    }
 
     this.addZero = ()=>{
-       if (result === "") return;
+     if (result === "") return;
 
-      result+="0"
-      this.input(result)
-    }
-
-    this.addMultiplication = ()=>{
-       let lastChar = +result[result.length -1];
-      if (result === "" || isNaN(lastChar)) return;
-
-
-      result+="*";
-      this.input(result);
-    }
-    
-    this.addDivision = ()=>{
-       let lastChar = +result[result.length -1];
-      if (result === "" || isNaN(lastChar)) return;
+     result+="0"
+     this.input(result)
+   }
+   //---------------------------------------------------------  OPERATIONS  -------------------
+   this.addPlus = ()=>{
+    let lastChar = +result[result.length -1];
 
 
-      result+="/";
-      this.input(result);
-    }
+    if (result === "" || isNaN(lastChar)) return;
 
-    this.equal = ()=>{
-      if (!result.length) return;
-      result = eval(result);
-      this.input(result);
-    }
+    result+="+"
+    this.input(result)
+  }
+
+  this.addMinus = ()=>{
+   let lastChar = +result[result.length -1];
+   if (result === "" || isNaN(lastChar)) return;
 
 
-//--------------CLEAR--------------------------
+   result+="-";
+   this.input(result);
+ }
+
+ this.addMultiplication = ()=>{
+   let lastChar = +result[result.length -1];
+   if (result === "" || isNaN(lastChar)) return;
+
+
+   result+="*";
+   this.input(result);
+ }
+
+ this.addDivision = ()=>{
+   let lastChar = +result[result.length -1];
+   if (result === "" || isNaN(lastChar)) return;
+
+
+   result+="/";
+   this.input(result);
+ }
+//---------------------------------------------------EQUAL---------
+this.equal = ()=>{
+  if (!result.length) return;
+  result = String(eval(result));
+  this.input(result);
+
+}
+
+//--------------------------------------------------CLEAR----------------------
+
 this.clear = ()=>{
-
   result = "0"
   this.input(result)
 }
 
-
-
-
-
-console.log(result)
 }
 
 ko.applyBindings(new Calculator())
