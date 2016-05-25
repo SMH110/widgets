@@ -1,0 +1,3 @@
+-Don't use Keyboard's buttons please.
+-Insert a number then an operation (*/-+) then insert another number then press =.
+-Press C and use it again.

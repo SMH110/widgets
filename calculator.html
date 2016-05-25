@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calculator.css">
+  <script src="knockout-3.4.0.js"></script>
+</head>
+
+<body>
+  <div class="main-body"> <span> calculator </span>
+    <form>
+      <div class="input-div">
+        <input type="text" id= "result" data-bind="value: input" />
+      </div>
+      <ul class="first-row">
+        <li>
+          <button id="seven" data-bind= "click: addSeven">7</button>
+        </li>
+        <li>
+          <button id="eight" data-bind ="click: addEight">8</button>
+        </li>
+        <li>
+          <button id="nine" data-bind="click: addNine">9</button>
+        </li>
+        <li>
+          <button id="clear" data-bind ="click: clear">C</button>
+        </li>
+      </ul>
+      <ul class="second-row">
+        <li>
+          <button id="four" data-bind="click: addFour">4</button>
+        </li>
+        <li>
+          <button id="five" data-bind="click: addFive">5</button>
+        </li>
+        <li>
+          <button id="six" data-bind="click: addSix">6</button>
+        </li>
+        <li>
+          <button id="plus" data-bind="click: addPlus">+</button>
+        </li>
+      </ul>
+      <ul class="third-row">
+        <li>
+          <button id="one" data-bind="click: addOne">1</button>
+        </li>
+        <li>
+          <button id="two" data-bind="click: addTwo">2</button>
+        </li>
+        <li>
+          <button id="three" data-bind="click: addThree">3</button>
+        </li>
+        <li>
+          <button id="subtraction"  data-bind="click: addMinus">-</button>
+        </li>
+      </ul>
+      <ul class="fourth-row">
+        <li>
+          <button id="zero" data-bind="click: addZero" >0</button>
+        </li>
+        <li>
+          <button id="multiply"  data-bind="click: addMultiplication">*</button>
+        </li>
+        <li>
+          <button id="div" data-bind="click: addDivision">/</button>
+        </li>
+        <li>
+          <button id="equal" data-bind="click: equal" >=</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</body>
+<script type="text/javascript"> 
+  function Calculator(){
+    'use strict';
+    let result = "";
+    
+    this.input = ko.observable(result);
+
+    this.addSeven = ()=>{
+      result+="7"
+      this.input(result)
+    }
+
+    this.addEight = ()=>{
+      result+="8"
+      this.input(result)
+    }
+
+    this.addNine = ()=>{
+      result+="9"
+      this.input(result)
+    }
+
+    this.addFour = ()=>{
+      result+="4"
+      this.input(result)
+    }
+
+    this.addFive = ()=>{
+      result+="5"
+      this.input(result)
+    }
+
+    this.addSix = ()=>{
+      result+="6"
+      this.input(result)
+    }
+
+    this.addPlus = ()=>{
+      let lastChar = +result[result.length -1];
+      if (result === "" || isNaN(lastChar)) return;
+            
+      result+="+"
+      this.input(result)
+    }
+
+    this.addOne = ()=>{
+      result+="1"
+      this.input(result)
+    }
+
+    this.addTwo = ()=>{
+      result+="2"
+      this.input(result)
+    }
+
+    this.addThree = ()=>{
+      result+="3"
+      this.input(result)
+    }
+
+    this.addMinus = ()=>{
+       let lastChar = +result[result.length -1];
+      if (result === "" || isNaN(lastChar)) return;
+
+
+      result+="-";
+      this.input(result);
+    }
+
+    this.addZero = ()=>{
+       if (result === "") return;
+
+      result+="0"
+      this.input(result)
+    }
+
+    this.addMultiplication = ()=>{
+       let lastChar = +result[result.length -1];
+      if (result === "" || isNaN(lastChar)) return;
+
+
+      result+="*";
+      this.input(result);
+    }
+    
+    this.addDivision = ()=>{
+       let lastChar = +result[result.length -1];
+      if (result === "" || isNaN(lastChar)) return;
+
+
+      result+="/";
+      this.input(result);
+    }
+
+    this.equal = ()=>{
+      if (!result.length) return;
+      result = eval(result);
+      this.input(result);
+    }
+
+
+//--------------CLEAR--------------------------
+this.clear = ()=>{
+
+  result = ""
+  this.input(result)
+}
+
+
+
+
+
+console.log(result)
+}
+
+ko.applyBindings(new Calculator())
+</script>
+</html>
