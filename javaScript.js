@@ -1,123 +1,26 @@
 'use strict';
+
 function Calculator() {
     let result = "0";
     let buttons_insert = "";
     this.input = ko.observable(result);
+    let numbers = ["", "1", "2", "3", "4",
+        "5", "6", "7", "8", "9"
+    ]
 
     //-------------------------------------------------  ADD NUMBER -----------------------
-
-    this.addSeven = () => {
-        if (result === "0") {
-            result = "7";
-            buttons_insert = "7";
+    this.addNumber = () => {
+        if (result === 0) {
+            result = numbers[index];
+            buttons_insert = numbers[index];
             this.input(result);
             return;
         }
 
-        result += "7";
-        buttons_insert += "7";
+        result += numbers[index];
+        buttons_insert += numbers[index];
         this.input(buttons_insert)
-    }
 
-    this.addEight = () => {
-        if (result === "0") {
-            result = "8";
-            buttons_insert = "8";
-            this.input(result);
-            return;
-        }
-
-        result += "8";
-        buttons_insert += "8";
-        this.input(buttons_insert);
-    }
-
-    this.addNine = () => {
-        if (result === "0") {
-            result = "9";
-            buttons_insert = "9";
-            this.input(result);
-            return;
-        }
-        result += "9";
-        buttons_insert += "9";
-        this.input(buttons_insert);
-    }
-
-    this.addFour = () => {
-        if (result === "0") {
-            result = "4";
-            buttons_insert = "4";
-            this.input(result);
-            return;
-        }
-        result += "4";
-        buttons_insert += "4";
-        this.input(buttons_insert);
-    }
-
-    this.addFive = () => {
-        if (result === "0") {
-            result = "5";
-            buttons_insert = "5";
-            this.input(result);
-            return;
-        }
-
-        result += "5";
-        buttons_insert += "5";
-        this.input(buttons_insert);
-    }
-
-    this.addSix = () => {
-        if (result === "0") {
-            result = "6";
-            buttons_insert = "6";
-            this.input(result)
-            return;
-        }
-        result += "6";
-        buttons_insert += "6";
-        this.input(buttons_insert);
-    }
-
-    this.addOne = () => {
-        if (result === "0") {
-            result = "1";
-            buttons_insert = "1";
-            this.input(result);
-            return;
-        }
-
-        result += "1"
-        buttons_insert += "1";
-        this.input(buttons_insert);
-    }
-
-    this.addTwo = () => {
-        if (result === "0") {
-            result = "2";
-            buttons_insert = "2";
-            this.input(result);
-            return;
-        }
-
-        result += "2";
-        buttons_insert += "2";
-        this.input(buttons_insert);
-    }
-
-    this.addThree = () => {
-        if (result === "0") {
-            result = "3";
-            buttons_insert = "3";
-            this.input(result);
-            return;
-        }
-
-        result += "3";
-        buttons_insert += "3";
-        this.input(buttons_insert);
     }
 
     this.addZero = () => {
@@ -197,6 +100,12 @@ function Calculator() {
         buttons_insert = "";
         this.input(result);
     }
+
+}
+
+let index = "";
+let getButtonId = (button) => {
+    index = button.id
 
 }
 
