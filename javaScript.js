@@ -80,12 +80,15 @@ function Calculator() {
     //-------------------------------------------------------EQUAL---------
 
     this.equal = () => {
+        buttons_insert = "";
         if (!result.length) return;
         result = String(eval(result));
         if (result == Number.POSITIVE_INFINITY || result == Number.NEGATIVE_INFINITY) {
             result = "0";
         }
         this.input(result);
+        buttons_insert = "";
+        result = ""
     }
 
 
