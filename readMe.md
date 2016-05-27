@@ -1,2 +1,3 @@
--Don't use Keyboard's buttons please.
--Insert a number then an operation (*/-+) then insert another number then press =.
+#Calculator
+A basic client side calculator
+- Don't use the keyboard!
