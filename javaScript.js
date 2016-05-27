@@ -10,7 +10,8 @@ function Calculator() {
 
     //-------------------------------------------------  ADD NUMBER -----------------------
     this.addNumber = () => {
-        if (result === 0) {
+        console.log(result)
+        if (result === "0") {
             result = numbers[index];
             buttons_insert = numbers[index];
             this.input(result);
@@ -32,7 +33,7 @@ function Calculator() {
     }
     //---------------------------------------------------------  OPERATIONS  -------------------
     this.addPlus = () => {
-
+console.log(result)
         let lastChar = +result[result.length - 1];
         if (isNaN(lastChar)) return;
         if (result.indexOf("+") > -1 || result.indexOf("-") > -1 || result.indexOf("/") > -1 || result.indexOf("*") > -1) {
