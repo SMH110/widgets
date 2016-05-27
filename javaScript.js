@@ -4,21 +4,18 @@ function Calculator() {
     let result = "0";
     let buttons_insert = "";
     this.input = ko.observable(result);
-    let numbers = ["", "1", "2", "3", "4",
-        "5", "6", "7", "8", "9"
-    ]
 
     //-------------------------------------------------  ADD NUMBER -----------------------
-    this.addNumber = () => {
+    this.addNumber = (number) => () => {
         if (result === "0") {
-            result = numbers[index];
-            buttons_insert = numbers[index];
+            result = number.toString();
+            buttons_insert = number.toString();
             this.input(result);
             return;
         }
 
-        result += numbers[index];
-        buttons_insert += numbers[index];
+        result += number.toString();
+        buttons_insert += number.toString();
         this.input(buttons_insert)
 
     }
@@ -99,12 +96,6 @@ function Calculator() {
         buttons_insert = "";
         this.input(result);
     }
-
-}
-
-let index = "";
-let getButtonId = (button) => {
-    index = button.id
 
 }
 
