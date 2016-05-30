@@ -1,103 +1,134 @@
 'use strict';
 
 function Calculator() {
-    let result = "0";
-    let buttons_insert = "";
-    this.input = ko.observable(result);
+    let newInput = "0";
+    let oldInput = "";
+    let result = "";
+
+    this.input = ko.observable(newInput);
+    let operation = "";
+    let history = [];
 
     //-------------------------------------------------  ADD NUMBER -----------------------
     this.addNumber = (number) => () => {
-        if (result === "0") {
-            result = number.toString();
-            buttons_insert = number.toString();
-            this.input(result);
+        if (newInput === "0") {
+            newInput = number.toString();
+            history.push(newInput)
+            this.input(newInput);
             return;
         }
-
-        result += number.toString();
-        buttons_insert += number.toString();
-        this.input(buttons_insert)
-
+        if (history[history.length - 1] === "=") {
+            newInput = "";
+        }
+        newInput += number.toString();
+        history.push(newInput)
+        this.input(newInput)
     }
 
     this.addZero = () => {
-        if (result === "0") return;
-
-        result += "0";
-        buttons_insert += "0";
-        this.input(buttons_insert);
+        if (newInput === "0") return;
+        if (history[history.length - 1] === "=") {
+            newInput = "";
+        }
+        newInput += "0";
+        history.push(newInput)
+        this.input(newInput);
     }
     //---------------------------------------------------------  OPERATIONS  -------------------
     this.addPlus = () => {
-        let lastChar = +result[result.length - 1];
-        if (isNaN(lastChar)) return;
-        if (result.indexOf("+") > -1 || result.indexOf("-") > -1 || result.indexOf("/") > -1 || result.indexOf("*") > -1) {
+        if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
             this.equal()
         }
+        operation = "+";
+        if ( history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/" ) return;
+
+        oldInput = newInput;
+        history.push("+")
+        newInput = "";
 
 
-        this.input(result);
-        result += "+";
-        buttons_insert = "";
     }
 
     this.addMinus = () => {
-        let lastChar = +result[result.length - 1];
-        if (result === "0" || isNaN(lastChar)) return;
-        if (result.indexOf("+") > -1 || result.indexOf("-") > -1 || result.indexOf("/") > -1 || result.indexOf("*") > -1) {
+        if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
             this.equal()
+
         }
-        this.input(result);
-        result += "-";
-        buttons_insert = "";
+        operation = "-";
+        if ( history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/" ) return;
+
+        oldInput = newInput;
+        history.push("-")
+        newInput = "";
+
     }
 
     this.addMultiplication = () => {
-        let lastChar = +result[result.length - 1];
-        if (result === "0" || isNaN(lastChar)) return;
-        if (result.indexOf("+") > -1 || result.indexOf("-") > -1 || result.indexOf("/") > -1 || result.indexOf("*") > -1) {
+        if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
             this.equal()
         }
+        operation = "*";
+       if ( history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/" ) return;
 
-        this.input(result);
-        result += "*";
-        buttons_insert = "";
+        oldInput = newInput;
+        history.push("*")
+        newInput = "";
+
     }
 
     this.addDivision = () => {
-        let lastChar = +result[result.length - 1];
-        if (result === "0" || isNaN(lastChar)) return;
-        if (result.indexOf("+") > -1 || result.indexOf("-") > -1 || result.indexOf("/") > -1 || result.indexOf("*") > -1) {
-            this.equal();
+        if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
+            this.equal()
         }
+        operation = "/";
+        if ( history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/" ) return;
+        oldInput = newInput;
+        history.push("/")
+        newInput = "";
 
-        this.input(result);
-        result += "/";
-        buttons_insert = "";
     }
 
 
     //-------------------------------------------------------EQUAL---------
 
     this.equal = () => {
-        buttons_insert = "";
-        if (!result.length) return;
-        result = String(eval(result));
+        if (isNaN(history[history.length - 1])) return
+        if (operation === "" || oldInput === "") return;
+        if (operation === "+") {
+            result = +oldInput + +newInput;
+        } else if (operation === "-") {
+            result = +oldInput - +newInput;
+        } else if (operation === "*") {
+            result = +oldInput * +newInput;
+        }else if (operation === "/") {
+            result = +oldInput / +newInput;
+        }
+        
         if (result == Number.POSITIVE_INFINITY || result == Number.NEGATIVE_INFINITY) {
             result = "0";
         }
+
         this.input(result);
-        buttons_insert = "";
-        result = ""
+        history = [];
+        history.push(result, "=")
+        newInput = result;
+
+
+       
+
+
     }
 
 
     //-------------------------------------------------------CLEAR---------
 
     this.clear = () => {
-        result = "0";
-        buttons_insert = "";
-        this.input(result);
+        newInput = "0";
+        oldInput = "";
+        result = "";
+        history = [];
+        this.input(newInput);
+
     }
 
 }
