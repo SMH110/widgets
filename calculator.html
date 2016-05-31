@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <div class="main-body"> <span> calculator </span>
+  <div class="container" data-bind="foreach: calculators">
+    <div class="main-body" > <span> calculator </span>
     <form>
       <div class="input-div">
         <input type="text" id= "result" data-bind="value: input" />
@@ -71,6 +72,7 @@
         </li>
       </ul>
     </form>
+  </div>
   </div>
 </body>
 <script type="text/javascript" src="javaScript.js"></script>

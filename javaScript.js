@@ -128,4 +128,5 @@ function Calculator() {
     }
 }
 
-ko.applyBindings(new Calculator());
+let calculators = [new Calculator(), new Calculator()]
+ko.applyBindings(calculators);

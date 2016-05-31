@@ -12,20 +12,28 @@ ul {
 	list-style: none;
 	display: block;
 	margin-bottom: 30px;
-	margin-left: 13px;
-	margin-top:15px;
+	margin-left: 16px;
+	margin-top:5px;
 	
 }
 li {
 	float: left;
-	margin-left: 15px;
+	margin-left: 10px;
 	display:block;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+}
+
+.container{
+	margin: 0 auto;
+	width: 1200px;
+	padding-left: 100px;
+	
 }
 .main-body {
-	width: 600px;
-	height: 840px;
-	margin: 0 auto;
+	width: 450px;
+	height: 630px;
+	margin: 0 15px;
+	float: left;
 	background-image: url(main-body.png);
 	background-repeat: no-repeat;
 	padding-top: 20px;
@@ -42,7 +50,7 @@ li {
 	margin: 30px auto;
 	
 	color: #C7C7C7;
-	width: 95%;
+	width: 92%;
 	height:auto;
 	text-align: center;
 }
@@ -57,12 +65,12 @@ li {
 	display: block;
 	margin: 0 autot;
 	border: none;
-	height: 130px;
-	font-size: 58px;
+	height: 90px;
+	font-size: 42px;
 }
 button {
-	width: 125px;
-	height: 125px;
+	width: 92px;
+	height: 92px;
 	border-radius:4px;
 	background-color: #3e4b57;
 	color:  #e6edf4;
