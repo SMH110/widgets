@@ -12,7 +12,7 @@ ul {
 	list-style: none;
 	display: block;
 	margin-bottom: 30px;
-	margin-left: 3px;
+	margin-left: 13px;
 	margin-top:15px;
 	
 }
@@ -22,43 +22,24 @@ li {
 	display:block;
 	margin-bottom: 15px;
 }
-.container {
-	width: 940px;
+.main-body {
+	width: 600px;
+	height: 840px;
 	margin: 0 auto;
-	
-	
-}
-.main-body-left {
-	width: 400px;
-	height: 535px;
-	float: left;
-	margin-right: 5px;
 	background-image: url(main-body.png);
 	background-repeat: no-repeat;
 	padding-top: 20px;
 }
-.main-body-right {
-	width: 400px;
-	height: 535px;
-	float: right;
-	margin-left: 5px;
-	
-	background-image: url(main-body.png);
-	background-repeat: no-repeat;
-	padding-top: 20px;
-}
-
-
-.main-body-left span, .main-body-right span {
+.main-body span {
 	display: block;
 	color: #3e4b57;
 	font-family: Arial, sans-serif, Gotham, "Helvetica Neue", Helvetica;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 32px;
+	font-size: 42px;
 }
 .input-div {
-	margin: 15px auto;
+	margin: 30px auto;
 	
 	color: #C7C7C7;
 	width: 95%;
@@ -68,7 +49,7 @@ li {
 .input-div input[type="text"] {
 	background-color: #3e4b57;
 	width: 100%;
-	border-radius: 8px;
+	border-radius: 10px;
 	text-align: right;
 	padding: 0 20px;
 	box-sizing: border-box;
@@ -76,16 +57,16 @@ li {
 	display: block;
 	margin: 0 autot;
 	border: none;
-	height: 80px;
-	font-size: 48px;
+	height: 130px;
+	font-size: 58px;
 }
 button {
-	width: 80px;
-	height: 80px;
+	width: 125px;
+	height: 125px;
 	border-radius:4px;
 	background-color: #3e4b57;
 	color:  #e6edf4;
 	border:none;
-	font-size: 42px;
+	font-size: 52px;
 	text-transform:uppercase;
 }
