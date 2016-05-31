@@ -5,18 +5,19 @@
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="calculator.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-  <script src="knockout-3.4.0.js"></script>
+  
 </head>
 
 <body>
-  <div class="main-body"> <span> calculator </span>
+  <div class="container"> 
+    <div class="main-body-left"> <span> calculator </span>
     <form>
       <div class="input-div">
         <input type="text" id= "result" data-bind="value: input" />
       </div>
       <ul class="first-row">
         <li>
-          <button data-bind= "click: addNumber(7)">7</button>
+          <button data-bind= "click:  addNumber(7)">7</button>
         </li>
         <li>
           <button data-bind= "click: addNumber(8)">8</button>
@@ -61,16 +62,85 @@
           <button id="zero" data-bind="click: addZero" >0</button>
         </li>
         <li>
-          <button id="multiply"  data-bind="click: addMultiplication">*</button>
+          <button id="multiply"  data-bind="click: addMultiplication">&times;</button>
+
+         
         </li>
         <li>
-          <button id="div" data-bind="click: addDivision">/</button>
+          <button id="div" data-bind="click: addDivision">÷</button>
         </li>
         <li>
           <button id="equal" data-bind="click: equal" >=</button>
         </li>
       </ul>
     </form>
+  </div>
+  
+  <!----------------------------CALCULATOR-RIGHT--------------------------------------------------->
+  <div class="main-body-right"> <span> calculator </span>
+    <form>
+      <div class="input-div">
+        <input type="text" id= "result" data-bind="value: inputRight" />
+      </div>
+      <ul class="first-row">
+        <li>
+          <button data-bind= "click: addNumberRight(7)">7</button>
+        </li>
+        <li>
+          <button data-bind= "click: addNumberRight(8)">8</button>
+        </li>
+        <li>
+          <button data-bind= "click:addNumberRight(9)">9</button>
+        </li>
+        <li>
+          <button id="clear" data-bind ="click: clearRight">C</button>
+        </li>
+      </ul>
+      <ul class="second-row">
+        <li>
+          <button data-bind= "click: addNumberRight(4)">4</button>
+        </li>
+        <li>
+          <button data-bind= "click: addNumberRight(5)">5</button>
+        </li>
+        <li>
+          <button data-bind= "click: addNumberRight(6)">6</button>
+        </li>
+        <li>
+          <button id="plus" data-bind="click: addPlusRight">+</button>
+        </li>
+      </ul>
+      <ul class="third-row">
+        <li>
+          <button data-bind= "click:addNumberRight(1)">1</button>
+        </li>
+        <li>
+          <button data-bind= "click: addNumberRight(2)">2</button>
+        </li>
+        <li>
+          <button data-bind= "click: addNumberRight(3)">3</button>
+        </li>
+        <li>
+          <button id="subtraction"  data-bind="click: addMinusRight">-</button>
+        </li>
+      </ul>
+      <ul class="fourth-row">
+        <li>
+          <button id="zero" data-bind="click: addZeroRight" >0</button>
+        </li>
+        <li>
+          <button id="multiply"  data-bind="click: addMultiplicationRight">&times;</button>
+        </li>
+        <li>
+          <button id="div" data-bind="click: addDivisionRight">&divide;</button>
+        </li>
+        <li>
+          <button id="equal" data-bind="click: equalRight" >=</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+    
   </div>
 </body>
 <script type="text/javascript" src="javaScript.js"></script>
