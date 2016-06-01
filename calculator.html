@@ -1,78 +1,84 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="calculator.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-  
+
 </head>
 
 <body>
   <div class="container" data-bind="foreach: calculators">
-    <div class="main-body" > <span> calculator </span>
-    <form>
-      <div class="input-div">
-        <input type="text" id= "result" data-bind="value: input" />
-      </div>
-      <ul class="first-row">
-        <li>
-          <button data-bind= "click: addNumber(7)">7</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(8)">8</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(9)">9</button>
-        </li>
-        <li>
-          <button id="clear" data-bind ="click: clear">C</button>
-        </li>
-      </ul>
-      <ul class="second-row">
-        <li>
-          <button data-bind= "click: addNumber(4)">4</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(5)">5</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(6)">6</button>
-        </li>
-        <li>
-          <button id="plus" data-bind="click: addPlus">+</button>
-        </li>
-      </ul>
-      <ul class="third-row">
-        <li>
-          <button data-bind= "click: addNumber(1)">1</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(2)">2</button>
-        </li>
-        <li>
-          <button data-bind= "click: addNumber(3)">3</button>
-        </li>
-        <li>
-          <button id="subtraction"  data-bind="click: addMinus">-</button>
-        </li>
-      </ul>
-      <ul class="fourth-row">
-        <li>
-          <button id="zero" data-bind="click: addZero" >0</button>
-        </li>
-        <li>
-          <button id="multiply"  data-bind="click: addMultiplication">&times;</button>
-        </li>
-        <li>
-          <button id="div" data-bind="click: addDivision">&divide;</button>
-        </li>
-        <li>
-          <button id="equal" data-bind="click: equal" >=</button>
-        </li>
-      </ul>
-    </form>
+    <div class="main-body"> <span> calculator </span>
+      <form>
+        <div class="input-div">
+          <input type="text" id="result" data-bind="value: input" />
+        </div>
+        <ul class="first-row">
+          <li>
+            <button data-bind="click: addNumber(7)">7</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(8)">8</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(9)">9</button>
+          </li>
+          <li>
+            <button id="clear" data-bind="click: clear">C</button>
+          </li>
+        </ul>
+        <ul class="second-row">
+          <li>
+            <button data-bind="click: addNumber(4)">4</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(5)">5</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(6)">6</button>
+          </li>
+          <li>
+            <button id="plus" data-bind="click: addPlus">+</button>
+          </li>
+        </ul>
+        <ul class="third-row">
+          <li>
+            <button data-bind="click: addNumber(1)">1</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(2)">2</button>
+          </li>
+          <li>
+            <button data-bind="click: addNumber(3)">3</button>
+          </li>
+          <li>
+            <button id="subtraction" data-bind="click: addMinus">-</button>
+          </li>
+        </ul>
+        <ul class="fourth-row">
+          <li>
+            <button id="zero" data-bind="click: addZero">0</button>
+          </li>
+          <li>
+            <button id="multiply" data-bind="click: addMultiplication">&times;</button>
+          </li>
+          <li>
+            <button id="div" data-bind="click: addDivision">&divide;</button>
+          </li>
+          <li>
+            <button id="equal" data-bind="click: equal">=</button>
+          </li>
+        </ul>
+      </form>
+      <a href="#" data-bind="click: remove, visible: calculators().length > 1">Remove</a>
+    </div>
   </div>
+  <div class="add-calculator-div">
+
+    <button class="add-calculator" data-bind="click: addCalculator">  Add Calculator </button>
   </div>
 </body>
 <script type="text/javascript" src="javaScript.js"></script>

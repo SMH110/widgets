@@ -26,13 +26,20 @@ li {
 .container{
 	margin: 0 auto;
 	width: 1200px;
-	padding-left: 100px;
 	
+	
+	
+}
+
+.container a{
+	text-decoration:  none;
+	color: #C7C7C7;
+	margin: 10px
 }
 .main-body {
 	width: 450px;
 	height: 630px;
-	margin: 0 15px;
+	margin: 10px 10px;
 	float: left;
 	background-image: url(main-body.png);
 	background-repeat: no-repeat;
@@ -68,7 +75,7 @@ li {
 	height: 90px;
 	font-size: 42px;
 }
-button {
+.container button {
 	width: 92px;
 	height: 92px;
 	border-radius:4px;
@@ -77,4 +84,24 @@ button {
 	border:none;
 	font-size: 52px;
 	text-transform:uppercase;
+}
+.add-calculator{
+	width: 200px;
+	height: 40px;
+	border-radius:4px;
+	background-color: #192026;
+	color:  #e6edf4;
+	border:none;
+	font-size: 16px;
+	text-transform:uppercase;
+	text-align: center;
+	margin: 20px 10px
+}
+
+.add-calculator-div{
+	clear: both;
+	margin: 30px auto;
+	width: 1200px;
+	
+	
 }
