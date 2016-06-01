@@ -95,7 +95,7 @@ function Calculator() {
         if (isNaN(history[history.length - 1])) return;
         if (operation === "" || oldInput === "") return;
         if (operation === "+") {
-            result = +oldInput + newInput;
+            result = +oldInput + +newInput;
         } else if (operation === "-") {
             result = +oldInput - +newInput;
         } else if (operation === "*") {
@@ -122,25 +122,18 @@ function Calculator() {
         result = "";
         history = [];
         this.input(newInput);
+    };
 
-
-
-
-    }
     this.remove = () => {
         calculators.remove(this)
-    }
+    };
 }
 
 let calculators = ko.observableArray([new Calculator()])
+
+
 function addCalculator() {
     calculators.push(new Calculator())
 }
-
-
-
-
-
-
 
 ko.applyBindings(calculators);
