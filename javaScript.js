@@ -1,6 +1,6 @@
-'use strict';
-
 function Calculator() {
+    'use strict';
+
     let newInput = "0";
     let oldInput = "";
     let result = "";
@@ -12,7 +12,7 @@ function Calculator() {
     this.addNumber = (number) => () => {
         if (newInput === "0") {
             newInput = number.toString();
-            history.push(newInput)
+            history.push(newInput);
             this.input(newInput);
             return;
         }
@@ -22,9 +22,10 @@ function Calculator() {
         }
 
         newInput += number.toString();
-        history.push(newInput)
-        this.input(newInput)
-    }
+        history.push(newInput);
+        this.input(newInput);
+    };
+
     //---------ADD ZERO-------
     this.addZero = () => {
         if (newInput === "0") return;
@@ -33,72 +34,68 @@ function Calculator() {
         }
 
         newInput += "0";
-        history.push(newInput)
+        history.push(newInput);
         this.input(newInput);
-    }
+    };
 
     //----------OPERATIONS----------
 
     this.addPlus = () => {
         if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-            this.equal()
+            this.equal();
         }
 
         operation = "+";
         if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
 
         oldInput = newInput;
-        history.push("+")
+        history.push("+");
         newInput = "";
-
-    }
+    };
 
     this.addMinus = () => {
         if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-            this.equal()
-
+            this.equal();
         }
 
         operation = "-";
         if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
 
         oldInput = newInput;
-        history.push("-")
+        history.push("-");
         newInput = "";
-
-    }
+    };
 
     this.addMultiplication = () => {
         if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-            this.equal()
+            this.equal();
         }
         operation = "*";
         if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
 
         oldInput = newInput;
-        history.push("*")
+        history.push("*");
         newInput = "";
-
-    }
+    };
 
     this.addDivision = () => {
         if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-            this.equal()
+            this.equal();
         }
         operation = "/";
         if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
         oldInput = newInput;
-        history.push("/")
+        history.push("/");
         newInput = "";
-    }
+    };
 
     //----------EQUAL----------
 
     this.equal = () => {
-        if (isNaN(history[history.length - 1])) return
+        if (isNaN(history[history.length - 1])) return;
         if (operation === "" || oldInput === "") return;
         if (operation === "+") {
-            result = +oldInput + +newInput;
+            result = +oldInput + newInput;
         } else if (operation === "-") {
             result = +oldInput - +newInput;
         } else if (operation === "*") {
@@ -113,9 +110,9 @@ function Calculator() {
 
         this.input(result);
         history = [];
-        history.push(result, "=")
+        history.push(result, "=");
         newInput = result;
-    }
+    };
 
     //----------CLEAR----------
 
@@ -125,17 +122,25 @@ function Calculator() {
         result = "";
         history = [];
         this.input(newInput);
-    }
 
+
+
+
+    }
     this.remove = () => {
         calculators.remove(this)
     }
-
 }
 
 let calculators = ko.observableArray([new Calculator()])
 function addCalculator() {
     calculators.push(new Calculator())
 }
+
+
+
+
+
+
 
 ko.applyBindings(calculators);
