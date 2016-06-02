@@ -123,17 +123,4 @@ function Calculator() {
         history = [];
         this.input(newInput);
     };
-
-    this.remove = () => {
-        calculators.remove(this)
-    };
 }
-
-let calculators = ko.observableArray([new Calculator()])
-
-
-function addCalculator() {
-    calculators.push(new Calculator())
-}
-
-ko.applyBindings(calculators);
