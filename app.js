@@ -6,6 +6,6 @@ function addCalculator() {
 
 function removeCalculator() {
   calculators.remove(this);
-}
+  }
 
 ko.applyBindings(calculators);
