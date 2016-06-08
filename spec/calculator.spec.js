@@ -136,7 +136,7 @@
       instance.equal();
       expect(instance.input()).to.equal(480);
       instance.clear();
-      expect(instance.input()).to.equal("0")
+      expect(instance.input()).to.equal("0");
     });
 
     it('It should start new operation after clicking equal button', () => {
@@ -221,7 +221,7 @@
       instance.addOperation("-");
       expect(instance.input()).to.equal(27);
       instance.addNumber(1)();
-      instance.addOperation("/")
+      instance.addOperation("/");
       expect(instance.input()).to.equal(26);
       instance.addNumber(2)();
       instance.equal();
@@ -235,7 +235,7 @@
       instance.addOperation("-");
       instance.addNumber(1)();
       instance.equal();
-      expect(instance.input()).to.equal(2)
+      expect(instance.input()).to.equal(2);
     });
 
     it('It should show correct result even if user pressed an operation button twice', () => {
@@ -278,8 +278,8 @@
       instance.addNumber(5)();
       instance.addOperation("/");
       instance.addNumber(0)();
-      instance.equal()
-      expect(instance.input()).to.equal("0")
+      instance.equal();
+      expect(instance.input()).to.equal("0");
     });
 
     it('It should not add more than one zero if there was just zero on display', () => {
@@ -290,15 +290,13 @@
 
      it('Clicking zero after an operation should has the same effect of pressing clear button', () => {
       instance.addNumber(1)();
-      instance.addOperation("+")
+      instance.addOperation("+");
       instance.addNumber(1)();
-      instance.equal()
+      instance.equal();
       instance.addNumber(0)();
-      instance.equal()
+      instance.equal();
       instance.addNumber(0)();
       expect(instance.input()).to.equal("0");
     });
-
-
   });
 }));
