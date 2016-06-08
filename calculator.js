@@ -20,32 +20,23 @@
             if (history[history.length - 1] === "=") {
                 newInput = "";
             }
-            if (number === 0) {
-                if (newInput === "0") return;
-                if (history[history.length - 1] === "=") {
-                    this.clear();
-                    return;
-                }
-                newInput += "0";
-                history.push(newInput);
-                this.input(newInput);
-            } else {
-                if (newInput === "0") {
-                    newInput = number.toString();
-                    history.push(newInput);
-                    this.input(newInput);
-                    return;
-                }
 
-                newInput += number.toString();
+            if (newInput === "0") {
+                newInput = number.toString();
                 history.push(newInput);
                 this.input(newInput);
+                return;
             }
+
+            newInput += number.toString();
+            history.push(newInput);
+            this.input(newInput);
+
         };
 
 
         //----------OPERATIONS----------
-        this.addOperation = (operator) => {
+        var addOperation = function(operator) {
             if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
                 this.equal();
             }
@@ -54,6 +45,22 @@
             oldInput = newInput;
             history.push(operator);
             newInput = "";
+        }.bind(this);
+
+        this.addPlus = () => {
+            addOperation("+");
+        };
+
+        this.addMinus = () => {
+            addOperation("-");
+        };
+
+        this.addMultiplication = () => {
+            addOperation("*");
+        };
+
+        this.addDivision = () => {
+            addOperation("/");
         };
 
 
