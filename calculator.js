@@ -20,27 +20,24 @@
             if (history[history.length - 1] === "=") {
                 newInput = "";
             }
-            if (number === 0) {
-                if (newInput === "0") return;
-                if (history[history.length - 1] === "=") {
-                    this.clear();
-                    return;
-                }
-                newInput += "0";
-                history.push(newInput);
-                this.input(newInput);
-            } else {
-                if (newInput === "0") {
-                    newInput = number.toString();
-                    history.push(newInput);
-                    this.input(newInput);
-                    return;
-                }
-
-                newInput += number.toString();
-                history.push(newInput);
-                this.input(newInput);
+            if (newInput === "0" && number === 0) return;
+            if (history[history.length - 1] === "=" && number === 0) {
+                this.clear();
+                return;
             }
+            
+
+            if (newInput === "0") {
+                newInput = number.toString();
+                history.push(newInput);
+                this.input(newInput);
+                return;
+            }
+
+            newInput += number.toString();
+            history.push(newInput);
+            this.input(newInput);
+
         };
 
 
