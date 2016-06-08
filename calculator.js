@@ -20,11 +20,6 @@
             if (history[history.length - 1] === "=") {
                 newInput = "";
             }
-            if (newInput === "0" && number === 0) return;
-            if (history[history.length - 1] === "=" && number === 0) {
-                this.clear();
-                return;
-            }
 
             if (newInput === "0") {
                 newInput = number.toString();
@@ -41,7 +36,7 @@
 
 
         //----------OPERATIONS----------
-        this.addOperation = (operator) => {
+        var addOperation = function(operator) {
             if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
                 this.equal();
             }
@@ -50,22 +45,22 @@
             oldInput = newInput;
             history.push(operator);
             newInput = "";
-        };
+        }.bind(this);
 
         this.addPlus = () => {
-            this.addOperation("+");
+            addOperation("+");
         };
 
         this.addMinus = () => {
-            this.addOperation("-");
+            addOperation("-");
         };
 
         this.addMultiplication = () => {
-            this.addOperation("*");
+            addOperation("*");
         };
 
         this.addDivision = () => {
-            this.addOperation("/");
+            addOperation("/");
         };
 
 
