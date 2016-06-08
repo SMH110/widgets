@@ -1,6 +1,6 @@
 (function (factory) {
   if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    module.exports = factory(require('chai'), require('../Calculator'));
+    module.exports = factory(require('chai'), require('../lib/Calculator'));
   } else {
     factory(chai, Calculator);
   }

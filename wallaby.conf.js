@@ -4,7 +4,7 @@ module.exports = function () {
   return {
     files: [
       // Application code
-      { pattern: 'calculator.js', load: false }
+      { pattern: 'lib/**/*.js', load: false }
     ],
     tests: [
       'spec/**/*spec.js'
