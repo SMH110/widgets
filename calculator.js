@@ -16,7 +16,7 @@
         let history = [];
 
         //--------ADD NUMBER---------
-        this.addNumber = (number) => () => {
+        this.addNumber = number => {
             if (history[history.length - 1] === "=") {
                 newInput = "";
             }
@@ -45,16 +45,16 @@
 
 
         //----------OPERATIONS----------
-        this.addOperation = (operation_) => {
+        this.addOperation = (operator) => {
             if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
                 this.equal();
             }
-            operation = operation_;
+            operation = operator;
             if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
             oldInput = newInput;
-            history.push(operation_);
+            history.push(operator);
             newInput = "";
-        }
+        };
 
 
 
@@ -64,7 +64,7 @@
             if (isNaN(history[history.length - 1])) return;
             if (operation === "" || oldInput === "") return;
             if (operation === "+") {
-                result = +oldInput + +newInput;
+                result = +oldInput + (+newInput);
             } else if (operation === "-") {
                 result = +oldInput - +newInput;
             } else if (operation === "*") {
