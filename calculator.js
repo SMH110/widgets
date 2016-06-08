@@ -25,7 +25,6 @@
                 this.clear();
                 return;
             }
-            
 
             if (newInput === "0") {
                 newInput = number.toString();
@@ -51,6 +50,22 @@
             oldInput = newInput;
             history.push(operator);
             newInput = "";
+        };
+
+        this.addPlus = () => {
+            this.addOperation("+");
+        };
+
+        this.addMinus = () => {
+            this.addOperation("-");
+        };
+
+        this.addMultiplication = () => {
+            this.addOperation("*");
+        };
+
+        this.addDivision = () => {
+            this.addOperation("/");
         };
 
 

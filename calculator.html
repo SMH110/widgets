@@ -40,7 +40,7 @@
             <button data-bind="click: addNumber.bind($data, 6)">6</button>
           </li>
           <li>
-            <button id="plus" data-bind="click: addOperation.bind($data,'+')">+</button>
+            <button id="plus" data-bind="click: addPlus">+</button>
           </li>
         </ul>
         <ul class="third-row">
@@ -54,7 +54,7 @@
             <button data-bind="click: addNumber.bind($data, 3)">3</button>
           </li>
           <li>
-            <button id="subtraction" data-bind="click:addOperation.bind($data,'-')">-</button>
+            <button id="subtraction" data-bind="click:addMinus">-</button>
           </li>
         </ul>
         <ul class="fourth-row">
@@ -62,10 +62,10 @@
             <button id="zero" data-bind="click: addNumber.bind($data, 0)">0</button>
           </li>
           <li>
-            <button id="multiply" data-bind="click: addOperation.bind($data,'*')">&times;</button>
+            <button id="multiply" data-bind="click: addMultiplication">&times;</button>
           </li>
           <li>
-            <button id="div" data-bind="click: addOperation.bind($data,'/')">&divide;</button>
+            <button id="div" data-bind="click: addDivision">&divide;</button>
           </li>
           <li>
             <button id="equal" data-bind="click: equal">=</button>
@@ -81,4 +81,5 @@
   <script type="text/javascript" src="calculator.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
+
 </html>
