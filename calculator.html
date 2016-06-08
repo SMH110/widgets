@@ -17,7 +17,7 @@
         </div>
         <ul class="first-row">
           <li>
-            <button data-bind="click: addNumber(7)">7</button>
+            <button data-bind="click: addNumber.bind(7)">7</button>
           </li>
           <li>
             <button data-bind="click: addNumber(8)">8</button>
@@ -40,7 +40,7 @@
             <button data-bind="click: addNumber(6)">6</button>
           </li>
           <li>
-            <button id="plus" data-bind="click: addPlus">+</button>
+            <button id="plus" data-bind="click: addOperation.bind(null,'+')">+</button>
           </li>
         </ul>
         <ul class="third-row">
@@ -54,18 +54,18 @@
             <button data-bind="click: addNumber(3)">3</button>
           </li>
           <li>
-            <button id="subtraction" data-bind="click: addMinus">-</button>
+            <button id="subtraction" data-bind="click:addOperation.bind(null,'-')">-</button>
           </li>
         </ul>
         <ul class="fourth-row">
           <li>
-            <button id="zero" data-bind="click: addZero">0</button>
+            <button id="zero" data-bind="click: addNumber(0)">0</button>
           </li>
           <li>
-            <button id="multiply" data-bind="click: addMultiplication">&times;</button>
+            <button id="multiply" data-bind="click: addOperation.bind(null,'*')">&times;</button>
           </li>
           <li>
-            <button id="div" data-bind="click: addDivision">&divide;</button>
+            <button id="div" data-bind="click: addOperation.bind(null,'/')">&divide;</button>
           </li>
           <li>
             <button id="equal" data-bind="click: equal">=</button>

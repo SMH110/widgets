@@ -17,84 +17,46 @@
 
         //--------ADD NUMBER---------
         this.addNumber = (number) => () => {
-            if (newInput === "0") {
-                newInput = number.toString();
+            if (history[history.length - 1] === "=") {
+                newInput = "";
+            }
+            if (number === 0) {
+                if (newInput === "0") return;
+                if (history[history.length - 1] === "=") {
+                    this.clear();
+                    return;
+                }
+                newInput += "0";
                 history.push(newInput);
                 this.input(newInput);
-                return;
-            }
+            } else {
+                if (newInput === "0") {
+                    newInput = number.toString();
+                    history.push(newInput);
+                    this.input(newInput);
+                    return;
+                }
 
-            if (history[history.length - 1] === "=") {
-                newInput = "";
+                newInput += number.toString();
+                history.push(newInput);
+                this.input(newInput);
             }
-
-            newInput += number.toString();
-            history.push(newInput);
-            this.input(newInput);
         };
 
-        //---------ADD ZERO-------
-        this.addZero = () => {
-            if (newInput === "0") return;
-            if (history[history.length - 1] === "=") {
-                newInput = "";
-            }
-
-            newInput += "0";
-            history.push(newInput);
-            this.input(newInput);
-        };
 
         //----------OPERATIONS----------
-
-        this.addPlus = () => {
+        this.addOperation = (operation_) => {
             if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
                 this.equal();
             }
-
-            operation = "+";
-            if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
-
-            oldInput = newInput;
-            history.push("+");
-            newInput = "";
-        };
-
-        this.addMinus = () => {
-            if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-                this.equal();
-            }
-
-            operation = "-";
-            if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
-
-            oldInput = newInput;
-            history.push("-");
-            newInput = "";
-        };
-
-        this.addMultiplication = () => {
-            if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-                this.equal();
-            }
-            operation = "*";
-            if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
-
-            oldInput = newInput;
-            history.push("*");
-            newInput = "";
-        };
-
-        this.addDivision = () => {
-            if (history.indexOf("+") > -1 || history.indexOf("-") > -1 || history.indexOf("*") > -1 || history.indexOf("/") > -1) {
-                this.equal();
-            }
-            operation = "/";
+            operation = operation_;
             if (history[history.length - 1] === "-" || history[history.length - 1] === "+" || history[history.length - 1] === "*" || history[history.length - 1] === "/") return;
             oldInput = newInput;
-            history.push("/");
+            history.push(operation_);
             newInput = "";
-        };
+        }
+
+
 
         //----------EQUAL----------
 
@@ -131,4 +93,8 @@
             this.input(newInput);
         };
     };
+
+
 }));
+
+
