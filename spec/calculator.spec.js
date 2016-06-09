@@ -96,20 +96,14 @@
       expect(instance.input()).to.equal("10");
     });
 
-    it('It should display the currently entered number when more than 1 digit is entered', () => {
-      instance.addNumber('2');
-      instance.addNumber('2');
-      expect(instance.input()).to.equal("22");
-    });
-
-    it('It should continue to display the first operand after an operation has been pressed and the user has not yet started typing the second operand', () => {
+    it('It should continue to display the first operand after subtract has been pressed and the user has not yet started typing the second operand', () => {
       instance.addNumber('2');
       instance.addNumber('2');
       instance.addMinus();
       expect(instance.input()).to.equal("22");
     });
 
-    it('It should display only the second operand when an operation has been pressed and the user is typing the second operand', () => {
+    it('It should display only the second operand when subtract has been pressed and the user is typing the second operand', () => {
       instance.addNumber('2');
       instance.addNumber('2');
       instance.addMinus();
@@ -128,20 +122,14 @@
       expect(instance.input()).to.equal("480");
     });
 
-    it('It should display the currently entered number when more than 1 digit is entered', () => {
-      instance.addNumber('2');
-      instance.addNumber('4');
-      expect(instance.input()).to.equal("24");
-    });
-
-    it('It should continue to display the first operand after an operation has been pressed and the user has not yet started typing the second operand', () => {
+    it('It should continue to display the first operand after multiply operation has been pressed and the user has not yet started typing the second operand', () => {
       instance.addNumber('2');
       instance.addNumber('4');
       instance.addMultiplication();
       expect(instance.input()).to.equal("24");
     });
 
-    it('It should display only the second operand when an operation has been pressed and the user is typing the second operand', () => {
+    it('It should display only the second operand when multiply operation has been pressed and the user is typing the second operand', () => {
       instance.addNumber('2');
       instance.addNumber('4');
       instance.addMultiplication();
@@ -150,7 +138,7 @@
       expect(instance.input()).to.equal("20");
     });
 
-    it('It should be able to perform a divied operation with more than single digit numbers', () => {
+    it('It should be able to perform a divide operation with more than single digit numbers', () => {
       instance.addNumber('3');
       instance.addNumber('2');
       instance.addDivision();
@@ -160,13 +148,7 @@
       expect(instance.input()).to.equal("2");
     });
 
-    it('It should display the currently entered number when more than 1 digit is entered', () => {
-      instance.addNumber('3');
-      instance.addNumber('2');
-      expect(instance.input()).to.equal("32");
-    });
-
-    it('It should continue to display the first operand after an operation has been pressed and the user has not yet started typing the second operand', () => {
+    it('It should continue to display the first operand after divide operation has been pressed and the user has not yet started typing the second operand', () => {
       instance.addNumber('3');
       instance.addNumber('2');
       instance.addDivision();
@@ -174,7 +156,7 @@
 
     });
 
-    it('It should display only the second operand when an operation has been pressed and the user is typing the second operand', () => {
+    it('It should display only the second operand when divide operation has been pressed and the user is typing the second operand', () => {
       instance.addNumber('3');
       instance.addNumber('2');
       instance.addDivision();
@@ -184,7 +166,17 @@
 
     });
 
-    it('It should be able to clear', () => {
+    it('It should be able to clear before equal button has been pressed', () => {
+      instance.addNumber('2');
+      instance.addNumber('4');
+      instance.addMultiplication();
+      instance.addNumber('2');
+      instance.addNumber('0');
+      instance.clear();
+      expect(instance.input()).to.equal("0");
+    });
+
+    it('It should be able to clear after equal button has been pressed', () => {
       instance.addNumber('2');
       instance.addNumber('4');
       instance.addMultiplication();
@@ -195,6 +187,8 @@
       expect(instance.input()).to.equal("0");
     });
 
+
+    // I didn't understand what do you mean
     it('It should start new operation after clicking equal button', () => {
       instance.addNumber('1');
       instance.addNumber('2');
@@ -205,7 +199,7 @@
       expect(instance.input()).to.equal('6');
     });
 
-    it('It should perform the result of the old add operation before moving to new operation if there was more than one operation', () => {
+    it('It should display the result of the old add operation before moving to new operation if there was more than one operation', () => {
       instance.addNumber('8');
       instance.addPlus();
       instance.addNumber('4');
@@ -237,7 +231,7 @@
       expect(instance.input()).to.equal("3");
     });
 
-    it('It should perform the last operation', () => {
+    it('It should use the last operator pressed when multiple operators have been pressed', () => {
       instance.addNumber('3');
       instance.addPlus();
       instance.addMinus();
@@ -246,7 +240,7 @@
       expect(instance.input()).to.equal("2");
     });
 
-    it('It should show correct result even if user pressed an subtract operation button twice', () => {
+    it('It should ignore multiple consecutive presses of the subtract operator', () => {
       instance.addNumber('5');
       instance.addMinus();
       instance.addMinus();
@@ -255,7 +249,7 @@
       expect(instance.input()).to.equal("3");
     });
 
-    it('It should show correct result even if user pressed an add operation button twice', () => {
+    it('It should ignore multiple consecutive presses of the add operator', () => {
       instance.addNumber('2');
       instance.addPlus();
       instance.addPlus();
@@ -264,7 +258,7 @@
       expect(instance.input()).to.equal("5");
     });
 
-    it('It should show correct result even if user pressed an multiply operation button twice', () => {
+    it('It should ignore multiple consecutive presses of the multiply operator', () => {
       instance.addNumber('6');
       instance.addMultiplication();
       instance.addMultiplication();
@@ -273,7 +267,7 @@
       expect(instance.input()).to.equal("18");
     });
 
-    it('It should show correct result even if user pressed an divide operation button twice', () => {
+    it('It should ignore multiple consecutive presses of the divide operator', () => {
       instance.addNumber('9');
       instance.addDivision();
       instance.addDivision();
@@ -296,16 +290,7 @@
       expect(instance.input()).to.equal("0");
     });
 
-    it('Clicking zero after an operation should has the same effect of pressing clear button', () => {
-      instance.addNumber('1');
-      instance.addPlus();
-      instance.addNumber('1');
-      instance.equal();
-      instance.addNumber('0');
-      instance.equal();
-      instance.addNumber('0');
-      expect(instance.input()).to.equal("0");
-    });
+    
 
     it('It should not change the display if equal button has been pressed before an operation button', () => {
       instance.addNumber('1');
