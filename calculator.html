@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="calculator.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
 </head>
 
 <body>
@@ -72,14 +71,13 @@
           </li>
         </ul>
       </form>
-      <a href="#" data-bind="click: removeCalculator, visible: calculators().length > 1">Remove</a>
+      <a href="#" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length > 1">Remove</a>
     </div>
   </div>
   <div class="add-calculator-div">
-    <button class="add-calculator" data-bind="click: addCalculator">  Add Calculator </button>
+    <button class="add-calculator" data-bind="click: addCalculator">Add Calculator</button>
   </div>
-  <script type="text/javascript" src="lib/calculator.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+  <script src="node_modules/requirejs/require.js" data-main="require-config.js"></script>
 </body>
 
 </html>
