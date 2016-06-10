@@ -187,16 +187,20 @@
       expect(instance.input()).to.equal("0");
     });
 
-
-    // I didn't understand what do you mean
     it('It should start new operation after clicking equal button', () => {
+      // First operation
       instance.addNumber('1');
       instance.addNumber('2');
       instance.addPlus();
       instance.addNumber('6');
       instance.equal();
-      instance.addNumber('6');
-      expect(instance.input()).to.equal('6');
+
+      // Second operation
+      instance.addNumber('5');
+      instance.addMinus();
+      instance.addNumber('2');
+      instance.equal()
+      expect(instance.input()).to.equal('3');
     });
 
     it('It should display the result of the old add operation before moving to new operation if there was more than one operation', () => {
