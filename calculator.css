@@ -4,104 +4,80 @@ html, body, ul, li, h1, h2, h3, h4, h5, h6, img, p {
 	margin: 0;
 	padding: 0;
 }
-body {
-	background-color: #3e4b57;
-	padding-top: 40px
+
+body{
+	background-color: #63a69f;
 }
-ul {
+
+ul{
 	list-style: none;
 	display: block;
-	margin-bottom: 30px;
-	margin-left: 16px;
-	margin-top:5px;
-	
+	margin-bottom: 1em;
+	margin-left: 1em;
+	margin-top:1em;
 }
 li {
 	float: left;
-	margin-left: 10px;
+	margin-left: 0.8em;
 	display:block;
-	margin-bottom: 10px;
+	margin-bottom: 0.8em;
 }
 
-.container{
+.stay-in-centre{
 	margin: 0 auto;
-	width: 1200px;
-	
-	
 	
 }
 
-.container a{
-	text-decoration:  none;
-	color: #C7C7C7;
-	margin: 10px
-}
-.main-body {
-	width: 450px;
-	height: 630px;
-	margin: 10px 10px;
+.main-body{
 	float: left;
-	background-image: url(main-body.png);
-	background-repeat: no-repeat;
-	padding-top: 20px;
-}
-.main-body span {
-	display: block;
-	color: #3e4b57;
-	font-family: Arial, sans-serif, Gotham, "Helvetica Neue", Helvetica;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 42px;
-}
-.input-div {
-	margin: 30px auto;
+	background-color: #f2e1ac;
 	
-	color: #C7C7C7;
-	width: 92%;
-	height:auto;
-	text-align: center;
-}
-.input-div input[type="text"] {
-	background-color: #3e4b57;
-	width: 100%;
-	border-radius: 10px;
-	text-align: right;
-	padding: 0 20px;
-	box-sizing: border-box;
-	color: #e6edf4;
-	display: block;
-	margin: 0 autot;
-	border: none;
-	height: 90px;
-	font-size: 42px;
-}
-.container button {
-	width: 92px;
-	height: 92px;
-	border-radius:4px;
-	background-color: #3e4b57;
-	color:  #e6edf4;
-	border:none;
-	font-size: 52px;
-	text-transform:uppercase;
-}
-.add-calculator{
-	width: 200px;
-	height: 40px;
-	border-radius:4px;
-	background-color: #192026;
-	color:  #e6edf4;
-	border:none;
-	font-size: 16px;
-	text-transform:uppercase;
-	text-align: center;
-	margin: 20px 10px
 }
 
 .add-calculator-div{
 	clear: both;
-	margin: 30px auto;
-	width: 1200px;
 	
+}
+.foreach{
+width: 40%;
+margin: 0 auto;
+}
+.container button {
+	width: 25px;
+	height: 25px;
+	border-radius:4px;
+	background-color: #cd2c24;
+	color:  #f2e1ac;
+	border:none;
+	font-size: 12px;
+	text-transform:uppercase;
+}
+
+.main-body span {
+	display: block;
+	color: #f2836b;
+	font-family: Arial, sans-serif, Gotham, "Helvetica Neue", Helvetica;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin-top: 1em;
 	
+}
+
+.input-div{
+	width: 98%;
+	float: left;
+}
+input{
+	width: 90%;
+	margin: 1em 2em 1em 1em;
+	border: 0;
+	height: 2em;
+	text-align: right;
+	padding: 0.9em;
+	background-color: #cd2c24;
+	color:  #f2e1ac;
+	font-size: 1.5em
+
+
 }
