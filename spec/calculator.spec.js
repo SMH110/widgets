@@ -1,6 +1,8 @@
 (function (factory) {
-  if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    module.exports = factory(require('chai'), require('../lib/Calculator'));
+  if (typeof define === 'function' && define['amd']) {
+    define(['chai', '../lib/calculator'], factory);
+  } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
+    factory(require('chai'), require('../lib/calculator'));
   } else {
     factory(chai, Calculator);
   }
@@ -294,7 +296,7 @@
       expect(instance.input()).to.equal("0");
     });
 
-    
+
 
     it('It should not change the display if equal button has been pressed before an operation button', () => {
       instance.addNumber('1');
