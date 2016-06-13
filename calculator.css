@@ -36,20 +36,31 @@ li {
 
 .add-calculator-div{
 	clear: both;
-	
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+
+.add-calculator-div button{
+	background-color: #f2e1ac;;
+	border: none;
+	width: 8em;
+	font-size: 1.5em;
+	color: #cd2c24;
+	border-radius: 2px;
+	margin: 0.3em 0
 }
 .foreach{
-width: 40%;
 margin: 0 auto;
 }
 .container button {
-	width: 25px;
-	height: 25px;
+	width: 3.1em;
+	height: 3.1em;
 	border-radius:4px;
 	background-color: #cd2c24;
 	color:  #f2e1ac;
 	border:none;
-	font-size: 12px;
+	font-size: 1.5em;
 	text-transform:uppercase;
 }
 
