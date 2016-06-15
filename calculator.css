@@ -1,94 +1,52 @@
- @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
 html, body, ul, li, h1, h2, h3, h4, h5, h6, img, p {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
 }
-
-body{
-	background-color: #63a69f;
+body {
+	background-color: #3e4b57;
+	padding-top: 40px
 }
-
-ul{
-	list-style: none;
-	display: block;
-	margin-bottom: 1em;
-	margin-left: 1em;
-	margin-top:1em;
-}
-li {
-	float: left;
-	margin-left: 0.8em;
-	display:block;
-	margin-bottom: 0.8em;
-}
-
-.stay-in-centre{
-	margin: 0 auto;
-	
-}
-
-.main-body{
-	float: left;
-	background-color: #f2e1ac;
-	
-}
-
-.add-calculator-div{
-	clear: both;
-	margin-left: 1em;
-	margin-top: 1em;
-}
-
-
-.add-calculator-div button{
-	background-color: #f2e1ac;;
-	border: none;
-	width: 8em;
-	font-size: 1.5em;
-	color: #cd2c24;
-	border-radius: 2px;
-	margin: 0.3em 0
-}
-.foreach{
-margin: 0 auto;
-}
-.container button {
-	width: 3.1em;
-	height: 3.1em;
-	border-radius:4px;
-	background-color: #cd2c24;
-	color:  #f2e1ac;
-	border:none;
-	font-size: 1.5em;
-	text-transform:uppercase;
-}
-
-.main-body span {
-	display: block;
-	color: #f2836b;
-	font-family: Arial, sans-serif, Gotham, "Helvetica Neue", Helvetica;
+.align-to-center{
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 1em;
-	margin-top: 1em;
 	
 }
 
-.input-div{
-	width: 98%;
-	float: left;
+.align-to-center span{
+	color: #696969;
+	font-size: 1.5em;
 }
-input{
-	width: 90%;
-	margin: 1em 2em 1em 1em;
-	border: 0;
-	height: 2em;
+.container input {
+	color: #696969;
+	border: none;
 	text-align: right;
-	padding: 0.9em;
-	background-color: #cd2c24;
-	color:  #f2e1ac;
-	font-size: 1.5em
+	background-color: #cdcdcd;
+	padding: 8px;
+	font-size: 2em;
+	width: 96%;
+	margin: 5px 0;
+	border-radius: 3px;
+}
 
-
+.calc-button {
+	border: none;
+	width: 23%;
+	height: 2.5em;
+	color: #696969;
+	background-color: #cdcdcd;
+	font-size: 1.7em;
+	margin: 2px 0;
+	border-radius: 3px;
+}
+.add-calc{
+	width: 96%;
+	border: none;
+	text-transform: uppercase;
+	margin: 5px 0;
+	color: #696969;
+	font-size: 1.3em;
+	background-color: #cdcdcd;
+	border-radius: 3px;
 }
