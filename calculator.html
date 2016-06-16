@@ -6,65 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="calculator.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class="container" data-bind="foreach: calculators">
-    <div class="row align-to-center">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <span> calculator </span>
-      </div>
-    </div>
-    <form>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-          <div class="align-to-center"> <input type="text" id="result" data-bind="value: input" /> </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 align-to-center">
-          <button data-bind="click: addNumber.bind(null, '7')" class="calc-button">7</button>
-          <button data-bind="click: addNumber.bind(null, '8')" class="calc-button">8</button>
-          <button data-bind="click: addNumber.bind(null, '9')" class="calc-button">9</button>
-          <button id="clear" data-bind="click: clear" class="calc-button">C</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 align-to-center">
-          <button data-bind="click: addNumber.bind(null, '4')" class="calc-button">4</button>
-          <button data-bind="click: addNumber.bind(null, '5')" class="calc-button">5</button>
-          <button data-bind="click: addNumber.bind(null, '6')" class="calc-button">6</button>
-          <button id="plus" data-bind="click: addPlus" class="calc-button">+</button> </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 align-to-center">
-          <button data-bind="click: addNumber.bind(null, '1')" class="calc-button">1</button>
-          <button data-bind="click: addNumber.bind(null, '2')" class="calc-button">2</button>
-          <button data-bind="click: addNumber.bind(null, '3')" class="calc-button">3</button>
-          <button id="subtraction" data-bind="click:addMinus" class="calc-button">-</button> </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 align-to-center" class="calc-button">
-          <button id="zero" data-bind="click: addNumber.bind(null, '0')" class="calc-button">0</button>
-          <button id="multiply" data-bind="click: addMultiplication" class="calc-button">&times;</button>
-          <button id="div" data-bind="click: addDivision" class="calc-button">&divide;</button>
-          <button id="equal" data-bind="click: equal" class="calc-button">=</button>
-        </div>
-      </div>
-    </form>
-    <a href="#" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length > 1">Remove</a>
-  </div>
-  <div class="container align-to-center">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 align-to-center"> <button class="add-calc" data-bind="click: addCalculator">Add Calculator</button>
+      <!-- ko foreach: calculators -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 calculator">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Calculator</h3>
+            <input class="form-control" type="text" data-bind="value: input" />
+          </div>
+        </div>
+        <div class="row buttons">
+          <div class="col-xs-3">
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '7')">7</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '4')">4</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '1')">1</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '0')">0</button>
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '8')">8</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '5')">5</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '2')">2</button>
+            <button class="btn btn-block" data-bind="click: addMultiplication">&times;</button>
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '9')">9</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '6')">6</button>
+            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '3')">3</button>
+            <button class="btn btn-block" data-bind="click: addDivision">&divide;</button>
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-block" data-bind="click: clear">C</button>
+            <button class="btn btn-block" data-bind="click: addPlus">+</button>
+            <button class="btn btn-block" data-bind="click: addMinus">-</button>
+            <button class="btn btn-block" data-bind="click: equal">=</button>
+          </div>
+        </div>
+        <button class="btn btn-block btn-danger remove-button" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length > 1">Remove</button>
+      </div>
+      <!-- /ko -->
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-block btn-primary" data-bind="click: addCalculator">Add Calculator</button>
       </div>
     </div>
   </div>
-
-
-
   <script src="node_modules/requirejs/require.js" data-main="require-config.js"></script>
 </body>
 
