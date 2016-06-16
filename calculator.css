@@ -4,10 +4,17 @@ body {
 }
 .calculator {
 	margin-bottom: 20px;
+
 }
 .calculator input {
 	margin-bottom: 10px;
 }
+
+}
+.calculator input {
+	margin-bottom: 10px;
+}
+
 .calculator .remove-button {
 	margin-top: 10px;
 }
