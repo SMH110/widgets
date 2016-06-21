@@ -10,7 +10,7 @@ body {
 	margin-bottom: 10px;
 }
 
-}
+
 .calculator input {
 	margin-bottom: 10px;
 }
@@ -25,4 +25,11 @@ body {
 .calculator .buttons div {
 	padding-left: 2px;
 	padding-right: 2px;
+}
+
+.enter-something-div{
+padding-top: 15px;
+}
+.enter-something-div button, .enter-something-div input{
+	margin-bottom: 10px;
 }

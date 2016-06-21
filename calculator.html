@@ -12,49 +12,89 @@
 <body>
   <div class="container">
     <div class="row">
+      <div class="col-lg-6 col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h1>To-Do</h1>
+          </div>
+          <div class="panel-body ">
+            <h4>You have nothing to do, great!</h4>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item"><input type="checkbox">
+                  <span>  Make Calculator</span>
+                </li>
+                <li class="list-group-item"> <input type="checkbox">
+                  <span>  Make to-do-list</span>
+                </li>
+                <li class="list-group-item"><input type="checkbox">
+                  <span>  Make weather widget</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <button class="btn btn-success">Make as done</button>
+              <button class="btn btn-success">Make as not done</button>
+              <button class="btn btn-danger">Delete</button>
+
+            </div>
+            <div class="enter-something-div">
+              <form class="form-inline">
+                <div class="form-group">
+                  <input type="text" placeholder="Enter something to do.." class="form-control">
+                  <button class="btn btn-default" type="submit">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- ko foreach: calculators -->
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 calculator">
-        <div class="row">
-          <div class="col-xs-12">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 calculator ">
+        <div class="row ">
+          <div class="col-xs-12 ">
             <h3>Calculator</h3>
-            <input class="form-control" type="text" data-bind="value: input" />
+            <input class="form-control " type="text " data-bind="value: input " />
           </div>
         </div>
-        <div class="row buttons">
-          <div class="col-xs-3">
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '7')">7</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '4')">4</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '1')">1</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '0')">0</button>
+        <div class="row buttons ">
+          <div class="col-xs-3 ">
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '7') ">7</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '4') ">4</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '1') ">1</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '0') ">0</button>
           </div>
-          <div class="col-xs-3">
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '8')">8</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '5')">5</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '2')">2</button>
-            <button class="btn btn-block" data-bind="click: addMultiplication">&times;</button>
+          <div class="col-xs-3 ">
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '8') ">8</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '5') ">5</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '2') ">2</button>
+            <button class="btn btn-block " data-bind="click: addMultiplication ">&times;</button>
           </div>
-          <div class="col-xs-3">
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '9')">9</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '6')">6</button>
-            <button class="btn btn-block" data-bind="click: addNumber.bind(null, '3')">3</button>
-            <button class="btn btn-block" data-bind="click: addDivision">&divide;</button>
+          <div class="col-xs-3 ">
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '9') ">9</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '6') ">6</button>
+            <button class="btn btn-block " data-bind="click: addNumber.bind(null, '3') ">3</button>
+            <button class="btn btn-block " data-bind="click: addDivision ">&divide;</button>
           </div>
-          <div class="col-xs-3">
-            <button class="btn btn-block" data-bind="click: clear">C</button>
-            <button class="btn btn-block" data-bind="click: addPlus">+</button>
-            <button class="btn btn-block" data-bind="click: addMinus">-</button>
-            <button class="btn btn-block" data-bind="click: equal">=</button>
+          <div class="col-xs-3 ">
+            <button class="btn btn-block " data-bind="click: clear ">C</button>
+            <button class="btn btn-block " data-bind="click: addPlus ">+</button>
+            <button class="btn btn-block " data-bind="click: addMinus ">-</button>
+            <button class="btn btn-block " data-bind="click: equal ">=</button>
           </div>
         </div>
-        <button class="btn btn-block btn-danger remove-button" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length > 1">Remove</button>
+        <button class="btn btn-block btn-danger remove-button " data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length>
+        1">Remove</button>
       </div>
       <!-- /ko -->
+
     </div>
     <div class="row">
       <div class="col-xs-12">
         <button class="btn btn-block btn-primary" data-bind="click: addCalculator">Add Calculator</button>
       </div>
     </div>
+
   </div>
   <script src="node_modules/requirejs/require.js" data-main="require-config.js"></script>
 </body>
