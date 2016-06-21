@@ -1,0 +1,86 @@
+What do you want to do? Do you want to go back to master or 
+do you want to make sure your changes are being performed to the latest code?
+I want to get the last version and then work on bootstrap 
+
+ok
+
+Then you have 2 choices
+
+Currently you are on a branch called feature/bootstrap. Because
+you are on a different branch to the one you want to get (master)
+you can either "merge" master into your branch, or you can "rebase"
+your branch on top of master.
+
+I personally prefer to rebase, but most people prefer merging
+because they find it easier.
+
+I will show you rebase because I think that's best.
+
+ofk
+
+So first thing we will do is we have to get the latest code 
+
+now we will rebase "interactively"
+
+Ok you can't rebase because you have unstaged changes... that means changes
+which you haven't "saved" into Git yet
+
+Ok the changes have been saved (committed) into Git
+
+Now we will try rebasing again... but before that I was going to configure your git
+to use VS Code as the editor for commit messages... but I'm not going to because I want you
+to see how horrible it is when you don't use VS Code for commit messages etc...
+Then we'll configure git properly
+
+git rebase (you know what that means)... -i means interactively and origin/master is the thing you want to rebase on top of
+
+First of all, rebasing means to re-base your code. In git, every commit is "based" upon a previous commit. So if you delete 1 line in a commit, that is based upon the code of the previous commit
+which is based upon the code of the previous commit, and so on... Git does not store "whole files", it stores "patches" (or changes). Does this make sense or shall I explain more?
+
+does THAT part make sense?
+do you mean by "based" built? yes kind of... you could say that
+anything else? I will higlight it 
+
+Ok... so look at what I am going to do now...
+
+What I just did is I made a "commit" which added a file. Git stored the whole file contents.
+
+Now I added a line to an EXISTING file... Git did not store the WHOLE file for this commit. It just stored the lines that I added
+
+So the memory inside Git looks like this
+
+1) A whole file
+2) Just the lines I added
+
+Does this make sense so far?yep
+
+Same thing if I remove lines or anything else. Git stores the "changes".
+
+Still making sense?
+yep
+
+Each change potentially "depends" on the previous change.
+
+Does that make sense?yep
+
+Why potentially? because, if I tell git in a change to delete a line of code, and the line of code is not there,
+then the change is not valid. How is this possible?
+Well, in Git, you can do several things to cause this problem.
+1) Git allows people to create branches. Let's say you add a new piece of code to the addZero method of calculator in the "master" branch to fix a bug.
+At the same time, I am working on a task to delete the addZero method and just use addNumber.
+Are these changes compatible? 
+not
+Ok... because if I delete the method, then where will your code go?
+And if you added code, then what lines of code should my commit delete?
+
+Do these 2 possibilities make sense?
+no 
+
+Ok basically, if my code change is made first, then the version of code in git does not have an addZero method.
+So when you want to "push" your change to master then Git gets confused and gives a conflict error.
+The reason is that Git 
+
+Sorry I have to go
+yr
+
+s
