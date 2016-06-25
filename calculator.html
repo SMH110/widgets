@@ -71,7 +71,7 @@
             <h4 data-bind="visible: !tasks().length">You have nothing to do, great!</h4>
             <div>
               <ul class="list-group" data-bind="foreach: tasks">
-                <li class="list-group-item"><label><input type="checkbox" data-bind="value: isSelected(true)">
+                <li class="list-group-item"><label><input type="checkbox" data-bind="checked: isSelected">
                   <span data-bind="text: name">  </span></label>
                 </li>
               </ul>
