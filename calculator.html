@@ -72,7 +72,7 @@
             <div>
               <ul class="list-group" data-bind="foreach: tasks">
                 <li class="list-group-item"><label><input type="checkbox" data-bind="checked: isSelected">
-                  <span data-bind="text: name">  </span></label>
+                  <span data-bind="text: name, style: { color: isDone() ? 'green' : 'black' }">  </span></label>
                 </li>
               </ul>
 
@@ -81,7 +81,6 @@
               <button class="btn btn-success add-margin-btn" data-bind="click: markAsDone, visible: isMarkAsDoneVisible()">Make as done</button>
               <button class="btn btn-success add-margin-btn" data-bind="click: markNotDone, visible: isMarkNotDoneVisible()">Make as not done</button>
               <button class="btn btn-danger" data-bind="click: deleteTasks, visible: isDeleteVisible()">Delete</button>
-
             </div>
             <div class="task-text">
               <form class="form-inline">
