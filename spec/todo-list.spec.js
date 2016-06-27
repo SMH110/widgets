@@ -49,6 +49,17 @@
     it('The delete button should not be displayed', () => {
       expect(instance.isDeleteVisible()).to.equal(false);
     });
+    describe('when a user try to enter an empty name to the task list and clicks add', () => {
+      beforeEach(() => {
+        instance.newTaskText('');
+        instance.addTask();
+      });
+
+      it('It should not add the empty name to the tasks list', () => {
+        expect(instance.tasks().length).to.equal(0);
+      });
+
+    });
 
     describe('When a user enters a task and clicks add', () => {
       beforeEach(() => {
@@ -331,6 +342,8 @@
           });
         });
 
+
+
         describe('When the user selects several tasks and clicks delete and clicks Cancel', () => {
           beforeEach(() => {
             instance.tasks().forEach(x => x.isSelected(true));
@@ -359,28 +372,6 @@
           });
         });
       });
-
-      // Test Driven Development
-      // Behaviour Driven Development / Acceptance Test Driven Development
-      // Test Driven Development - tests drive the code that you write...
-      // You do not write any code, unless it is to make a test pass
-      // If all tests are passing, you are not allowed to write any code
-      // You are supposed to write the simplest code needed to pass the test
-      // BDD - tests are based on the user's requirements
-
-      /*
-      Acceptance Criteria
-  
-
-  
-  Given some tasks have been selected
-  And the user clicks the Delete button
-  And the user clicks cancel on the confirmation popup
-  Then the confirmation popup should disappear
-  And the tasks should remain on the list
-  And the "mark * done" buttons should be present
-  And the "delete" button should be present
-      */
 
     });
   });
