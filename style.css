@@ -1,41 +1,9 @@
+@import "calculator.css";
+@import "toDoList.css";
 
 body {
 	padding-top: 40px
 }
 
-/*CALCULATOR*/
 
-.calculator {
-	margin-bottom: 20px;
-
-}
-.calculator input {
-	margin-bottom: 10px;
-}
-
-
-.calculator input {
-	margin-bottom: 10px;
-}
-
-.calculator .remove-button {
-	margin-top: 10px;
-}
-.calculator .buttons {
-	margin-left: 0px;
-	margin-right: 0px;
-}
-.calculator .buttons div {
-	padding-left: 2px;
-	padding-right: 2px;
-}
-
-
-/*--END OF CALCULATOR*--------------------------------/
-
-/*TO-DO-LIST*/
-.task-text button, .task-tex input{
-	margin-bottom: 10px;
-	margin-top: 10px;
-}
 

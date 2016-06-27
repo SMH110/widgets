@@ -1,0 +1,24 @@
+.calculator {
+	margin-bottom: 20px;
+
+}
+.calculator input {
+	margin-bottom: 10px;
+}
+
+
+.calculator input {
+	margin-bottom: 10px;
+}
+
+.calculator .remove-button {
+	margin-top: 10px;
+}
+.calculator .buttons {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.calculator .buttons div {
+	padding-left: 2px;
+	padding-right: 2px;
+}
