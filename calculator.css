@@ -1,7 +1,3 @@
-
-body {
-	padding-top: 40px
-}
 .calculator {
 	margin-bottom: 20px;
 
@@ -10,7 +6,7 @@ body {
 	margin-bottom: 10px;
 }
 
-}
+
 .calculator input {
 	margin-bottom: 10px;
 }
