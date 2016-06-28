@@ -16,43 +16,10 @@
         <div class="row">
           <!-- ko foreach: calculators -->
           <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 calculator">
-            <div class="row">
-              <div class="col-xs-12">
-                <h3>Calculator</h3>
-                <input class="form-control" type="text" data-bind="value: input" />
-              </div>
-            </div>
-            <div class="row buttons">
-              <div class="col-xs-3">
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '7')">7</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '4')">4</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '1')">1</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '0')">0</button>
-              </div>
-              <div class="col-xs-3">
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '8')">8</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '5')">5</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '2')">2</button>
-                <button class="btn btn-block" data-bind="click: addMultiplication">&times;</button>
-              </div>
-              <div class="col-xs-3">
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '9')">9</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '6')">6</button>
-                <button class="btn btn-block" data-bind="click: addNumber.bind(null, '3')">3</button>
-                <button class="btn btn-block" data-bind="click: addDivision">&divide;</button>
-              </div>
-              <div class="col-xs-3">
-                <button class="btn btn-block" data-bind="click: clear">C</button>
-                <button class="btn btn-block" data-bind="click: addPlus">+</button>
-                <button class="btn btn-block" data-bind="click: addMinus">-</button>
-                <button class="btn btn-block" data-bind="click: equal">=</button>
-              </div>
-            </div>
+            <!-- ko component: 'calculator' --><!-- /ko -->
             <button class="btn btn-block btn-danger remove-button" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length>  1">Remove</button>
-
           </div>
           <!-- /ko -->
-
         </div>
         <div class="row">
           <div class="col-xs-12">

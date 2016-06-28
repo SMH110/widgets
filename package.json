@@ -4,7 +4,8 @@
   "description": "A basic client side calculator",
   "main": "calculator.html",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha spec --recursive --require spec/mocha-setup"
+    "test": "node node_modules/mocha/bin/mocha spec --recursive --require spec/mocha-setup",
+    "start": "node node_modules/http-server/bin/http-server"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,14 @@
   "homepage": "https://github.com/SMH110/My-Calculator#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "http-server": "^0.9.0",
     "mocha": "^2.5.3",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "knockout": "^3.4.0",
-    "requirejs": "^2.2.0"
+    "requirejs": "^2.2.0",
+    "requirejs-text": "^2.0.12"
   }
 }
