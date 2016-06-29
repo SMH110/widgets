@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+          <div class="panel-heading">
+            <h1>To-Do</h1>
+          </div>
+          <div class="panel-body">
+            <h4 data-bind="visible: !tasks().length">You have nothing to do, great!</h4>
+            <div>
+              <ul class="list-group" data-bind="foreach: tasks">
+                <li class="list-group-item"><label><input type="checkbox" data-bind="checked: isSelected">
+                  <span data-bind="text: name, css: { 'text-success': isDone }">  </span></label>
+                </li>
+              </ul>
+
+            </div>
+            <div>
+              <button class="btn btn-success add-margin-btn" data-bind="click: markAsDone, visible: isMarkAsDoneVisible()">Mark as done</button>
+              <button class="btn btn-success add-margin-btn" data-bind="click: markNotDone, visible: isMarkNotDoneVisible()">Mark as not done</button>
+              <button class="btn btn-danger" data-bind="click: deleteTasks, visible: isDeleteVisible()">Delete</button>
+            </div>
+            <div class="task-text">
+              <form class="form-inline">
+                <div class="form-group">
+                  <input type="text" placeholder="Enter something to do..." class="form-control" data-bind="value: newTaskText">
+                  <button class="btn btn-default" type="submit" data-bind="click: addTask">Add</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
