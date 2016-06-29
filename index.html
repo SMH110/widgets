@@ -13,12 +13,24 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-12">
+        <!-- ko foreach: toDoLists -->
+        <div class="row toDoList">
+          <!-- ko component: 'toDoList' -->
+          <!-- /ko -->
+        </div>
+        <button class="btn btn-block btn-danger" data-bind="click: $parent.removeToDoList">Remove</button>
+        <!-- /ko -->
+        <button class="btn btn-block btn-primary" data-bind="click: addToDoList">Add To-Do-List</button>
+      </div>
+      <div class="col-lg-6 col-md-12">
         <div class="row">
           <!-- ko foreach: calculators -->
-          <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 calculator">
-            <!-- ko component: 'calculator' --><!-- /ko -->
-            <button class="btn btn-block btn-danger remove-button" data-bind="click: $parent.removeCalculator, visible: $parent.calculators().length>  1">Remove</button>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 calculator">
+            <!-- ko component: 'calculator' -->
+            <!-- /ko -->
+            
           </div>
+          <button class="btn btn-block btn-danger remove-button" data-bind="click: $parent.removeCalculator">Remove</button>
           <!-- /ko -->
         </div>
         <div class="row">
@@ -26,12 +38,6 @@
             <button class="btn btn-block btn-primary" data-bind="click: addCalculator">Add Calculator</button>
           </div>
         </div>
-      </div>
-
-      <div class="col-lg-6 col-md-12">
-        <!-- ko with: toDoList -->
-        <!-- ko component: 'toDoList' --><!-- /ko -->
-        <!-- /ko -->
       </div>
     </div>
   </div>
