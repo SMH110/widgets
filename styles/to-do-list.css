@@ -1,9 +1,4 @@
-.task-text button, .task-tex input{
+.task-text button {
 	margin-bottom: 10px;
 	margin-top: 10px;
-}
-
-
-.toDoList{
-	margin: 10px 0 10px 0;
 }
