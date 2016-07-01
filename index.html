@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculator</title>
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 
 <body>
@@ -18,6 +18,9 @@
         <!-- /ko -->
         <button class="btn btn-block btn-danger remove-widget" data-bind="click: $parent.remove">Remove</button>
       </div>
+      <!-- ko if: $index() % 4 === 3 --><div class="clearfix visible-lg-block"></div><!-- /ko -->
+      <!-- ko if: $index() % 3 === 2 --><div class="clearfix visible-md-block"></div><!-- /ko -->
+      <!-- ko if: $index() % 2 === 1 --><div class="clearfix visible-sm-block"></div><!-- /ko -->
       <!-- /ko -->
     </div>
     <div class="row">
