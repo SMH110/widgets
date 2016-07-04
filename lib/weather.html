@@ -1,0 +1,9 @@
+<h3>Weather</h3>
+<h4> Enter your city name</h4>
+<input type="text" placeholder="example: London" class="form-control" data-bind="value: city">
+<button type="submit" data-bind="click: showWeather" class="btn btn-default weather-button">Submit</button>
+<div class="weather-info" data-bind="visible: isTempVisible">
+    <h4 class="text-success" data-bind="text: josnCityName"></h4>
+    <p>Max Temperature: <span data-bind="text: maxTemp"></span><span> &#8451</span></p>
+    <p>Min Temperature: <span data-bind="text:minTemp"></span></span><span> &#8451</span></p>
+</div>
