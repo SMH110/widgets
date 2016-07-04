@@ -1,0 +1,5 @@
+<p> Enter your city name</p>
+    <input type="text" data-bind="value: city">
+    <button type="submit" data-bind="click: showWeather">submit</button>
+    <p data-bind="visible: isTempVisible">Max Temperature: <span data-bind="text: maxTemp"></span></p>
+    <p data-bind="visible: isTempVisible">Min Temperature: <span data-bind="text:minTemp"></span></p>
