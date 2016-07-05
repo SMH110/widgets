@@ -1,0 +1,7 @@
+<h3>Translate</h3>
+<input type="text" placeholder="Enter your text" class="form-control" data-bind="value: input">
+<span>From: </span> <input type="text" placeholder="E.g. en" class="form-control lang" data-bind="value: src">
+<span>To: </span> <input type="text" placeholder="E.g. ar" class="form-control lang" data-bind="value: target">
+<p><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" class="text-primary" target="blanket">Please use iso639-1 language codes</a></p>
+<button class="btn btn-default" data-bind="click: translate">Translate</button>
+<h4 data-bind="text: translation" class="text-success"></h4>

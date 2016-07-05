@@ -4,7 +4,7 @@
   } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
     factory(require('chai'), require('../lib/weatherApp'));
   } else {
-    factory(chai, sinon, ToDoList);
+    factory(chai, sinon, WeatherApp);
   }
 } (function (chai, WeatherApp) {
   'use strict';

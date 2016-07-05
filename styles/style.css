@@ -1,7 +1,7 @@
 @import "calculator.css";
 @import "to-do-list.css";
 @import "weather.css";
-
+@import "translate.css";
 body {
 	padding-top: 40px
 }
