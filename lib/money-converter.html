@@ -1,0 +1,10 @@
+<h3>Money Converter</h3>
+
+<span>From: </span><input type="text" class="form-control" placeholder=" i.e. USD, EUR, GBP" id="currency" data-bind="value: currencySrc">
+<span>To: </span><input type="text" class="form-control" placeholder=" i.e. JPY, KMF, AUD" id="currency" data-bind="value: currencyTrgt">
+<span>Amount: </span><input type="text" class="form-control" id="currency" data-bind="value: amount">
+<button type="submit" data-bind="click: convertCurrency" class="btn btn-default weather-button">Convert</button>
+<div class="reslut" data-bind="visible: changeReslut().length > 0">
+    <h4>Result: </h4>
+    <span></span>
+</div>

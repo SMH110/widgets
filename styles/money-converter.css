@@ -1,0 +1,14 @@
+#currency::-webkit-input-placeholder {
+	font-size: 12px;
+	
+}
+
+#currency::-moz-placeholder {
+	font-size: 12px;
+	
+}
+
+#currency:-moz-placeholder{
+	font-size: 12px;
+	
+}

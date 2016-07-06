@@ -2,9 +2,15 @@
 @import "to-do-list.css";
 @import "weather.css";
 @import "translate.css";
+@import "money-converter.css";
+
 body {
 	padding-top: 40px
 }
 .remove-widget {
 	margin-bottom: 20px;
+}
+
+.container .row div .add-top-margin{
+	margin-top: 10px;
 }
