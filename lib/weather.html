@@ -1,9 +1,11 @@
-<h3>Weather</h3>
-<h4> Enter your city name</h4>
-<input type="text" placeholder="example: London" class="form-control" data-bind="value: city">
-<button type="submit" data-bind="click: showWeather" class="btn btn-default weather-button">Submit</button>
-<div class="weather-info" data-bind="visible: isTempVisible">
-    <h4 class="text-success" data-bind="text: josnCityName"></h4>
-    <p>Max Temperature: <span data-bind="text: maxTemp"></span><span> &#8451</span></p>
-    <p>Min Temperature: <span data-bind="text:minTemp"></span></span><span> &#8451</span></p>
+<div class="weather">
+    <h3>Weather</h3>
+    <h5> Enter your city name or your zip code</h5>
+    <input type="text" placeholder="e.g. 'London, 'York,UK', N147AB'" class="form-control" data-bind="value: city">
+    <button type="submit" data-bind="click: getWeather, enable: isBtnGetWeatherEnable" class="btn btn-default">Get Weather</button>
+    <h4 class="text-danger" data-bind="text: errorMessage"></h4>
+    <h4 class="text-success" data-bind="text: jsonCityName"></h4>
+    <p data-bind="visible: jsonCityName().length">Max Temperature: <span data-bind="text: maxTemp"></span><span> &#8451</span></p>
+    <p data-bind="visible: jsonCityName().length">Min Temperature: <span data-bind="text:minTemp"></span><span> &#8451</span></p>
+
 </div>
