@@ -1,6 +1,6 @@
 <div class="weather">
     <h3>Weather</h3>
-    <input type="text" placeholder="Enter your city name or your zip code" class="form-control" data-bind="value: city">
+    <input type="text" placeholder="Enter your city name or your zip code" class="form-control" data-bind="value: searchText">
     <button type="submit" data-bind="click: getWeather, enable: isBtnGetWeatherEnable" class="btn btn-default">Get Weather</button>
     <h4 class="text-danger" data-bind="text: errorMessage"></h4>
     <h4 class="text-success" data-bind="text: jsonCityName"></h4>
