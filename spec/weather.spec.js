@@ -1,19 +1,19 @@
 (function (factory) {
   if (typeof define === 'function' && define['amd']) {
-    define(['chai', '../lib/weatherApp'], factory);
+    define(['chai', '../lib/weather'], factory);
   } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    factory(require('chai'), require('../lib/weatherApp'));
+    factory(require('chai'), require('../lib/weather'));
   } else {
     factory(chai, sinon, ToDoList);
   }
-} (function (chai, WeatherApp) {
+} (function (chai, Weather) {
   'use strict';
   const expect = chai.expect;
-  describe('WeatherApp', () => {
+  describe('Weather', () => {
     let instance;
 
     beforeEach(() => {
-      instance = new WeatherApp();
+      instance = new Weather();
     });
 
     it('It should start with empty input', () => {
