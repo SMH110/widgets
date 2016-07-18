@@ -1,15 +1,9 @@
-.container .row div .lang{
+.translate .language {
 	width: 80px;
 	display: inline-block;
-	margin: 10px 0 0 0;
+	margin-top: 10px;
 }
 
-
-.container .row div p{
-	margin:  0 0 15px 0;
-}
-
-
-.container .row div a{
-	color:#337ab7; 
+.translate .instructions {
+	margin-bottom: 15px;
 }
