@@ -1,5 +1,6 @@
 @import "calculator.css";
 @import "to-do-list.css";
+@import "weather.css";
 
 body {
 	padding-top: 40px

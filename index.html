@@ -18,9 +18,15 @@
         <!-- /ko -->
         <button class="btn btn-block btn-danger remove-widget" data-bind="click: $parent.remove">Remove</button>
       </div>
-      <!-- ko if: $index() % 4 === 3 --><div class="clearfix visible-lg-block"></div><!-- /ko -->
-      <!-- ko if: $index() % 3 === 2 --><div class="clearfix visible-md-block"></div><!-- /ko -->
-      <!-- ko if: $index() % 2 === 1 --><div class="clearfix visible-sm-block"></div><!-- /ko -->
+      <!-- ko if: $index() % 4 === 3 -->
+      <div class="clearfix visible-lg-block"></div>
+      <!-- /ko -->
+      <!-- ko if: $index() % 3 === 2 -->
+      <div class="clearfix visible-md-block"></div>
+      <!-- /ko -->
+      <!-- ko if: $index() % 2 === 1 -->
+      <div class="clearfix visible-sm-block"></div>
+      <!-- /ko -->
       <!-- /ko -->
     </div>
     <div class="row">
@@ -29,6 +35,9 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <button class="btn btn-block btn-primary" data-bind="click: addCalculator">Add Calculator</button>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <button class="btn btn-block btn-primary" data-bind="click: addWeather">Add Weather</button>
       </div>
     </div>
   </div>
