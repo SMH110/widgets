@@ -157,7 +157,7 @@
                 expect(instance.errorMessage()).to.be.empty;
               });
 
-              describe('When the API respond with a non JSON body', () => {
+              describe('When the API responded with a non JSON body', () => {
                 beforeEach(() => {
                   rejectJson(new Error('not valid json'));
                   return zurvan.waitForEmptyQueue();
