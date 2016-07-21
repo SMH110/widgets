@@ -40,7 +40,7 @@
       expect(instance.input()).to.be.empty;
     });
 
-    it('It should enable the Tranlste button', () => {
+    it('It should enable the Translate button', () => {
       expect(instance.isBtnTranslateEnable()).to.equal(true);
     });
 
@@ -65,7 +65,7 @@
         expect(instance.isBtnTranslateEnable()).to.equal(true);
       });
 
-      it('It should alret the user a message', () => {
+      it('It should alert the user a message', () => {
         expect(instance.errorMessage()).to.equal("Please enter a word then choose source language and target language then click Translate!");
       });
 
@@ -80,7 +80,7 @@
         instance.translate();
       });
 
-      it('It should alret the user with a message', () => {
+      it('It should alert the user with a message', () => {
         expect(instance.errorMessage()).to.equal("You can't choose the same language as source and target");
       });
 
@@ -115,6 +115,7 @@
             rejectFetch(new Error('Error making request'));
             return zurvan.waitForEmptyQueue();
           });
+
           it('It should re-enable the translate button', () => {
             expect(instance.isBtnTranslateEnable()).to.equal(true);
           });
@@ -128,8 +129,9 @@
               instance.translate();
             });
 
-            describe('When the request was successfull made', () => {
+            describe('When the request was successful made', () => {
               let resolveJson, rejectJson;
+
               beforeEach(() => {
                 resolveFetch({
                   json: () => new Promise((resolve, reject) => {
@@ -157,7 +159,7 @@
                   expect(instance.isBtnTranslateEnable()).to.equal(true);
                 });
                 it('It should display an error message to the user', () => {
-                  expect(instance.errorMessage()).to.equal(`Couldn't get translation. Please check your internet connection.`)
+                  expect(instance.errorMessage()).to.equal(`Couldn't get translation. Please check your internet connection.`);
                 });
               });
               describe('When the API responded with data', () => {
@@ -203,7 +205,7 @@
             expect(instance.isBtnTranslateEnable()).to.equal(false);
           });
 
-          it('It should not dispaly an error message to the user', () => {
+          it('It should not display an error message to the user', () => {
             expect(instance.errorMessage()).to.be.empty;
           });
 
@@ -216,13 +218,15 @@
             it('It should re-enable the translate button', () => {
               expect(instance.isBtnTranslateEnable()).to.equal(true);
             });
+
             it('It should display an error message to the user', () => {
-              expect(instance.errorMessage()).to.equal(`Couldn't get translation. Please check your internet connection.`)
+              expect(instance.errorMessage()).to.equal(`Couldn't get translation. Please check your internet connection.`);
             });
           });
 
           describe('When the API responded with data', () => {
             let data;
+
             beforeEach(() => {
               data = {
                 data: {
@@ -257,6 +261,7 @@
                 beforeEach(() => {
                   instance.translate();
                 });
+
                 describe(`And the request wasn't successfully made`, () => {
                   beforeEach(() => {
                     rejectFetch(new Error('Error making request'));
@@ -276,7 +281,7 @@
               });
             });
 
-            describe('When the user rests the setting to the default and prsess the translate button', () => {
+            describe('When the user resets the setting to the default and presses the translate button', () => {
               beforeEach(() => {
                 instance.input("");
                 instance.src("");
@@ -285,35 +290,36 @@
               });
 
               it('It should display an error message to the user', () => {
-                expect(instance.errorMessage()).to.equal("Please enter a word then choose source language and target language then click Translate!")
+                expect(instance.errorMessage()).to.equal("Please enter a word then choose source language and target language then click Translate!");
               });
+
               it('It should not show the previous translation to the user', () => {
                 expect(instance.translation()).to.be.empty;
               });
             });
 
-            describe('When the user enters another word and selects the same language for soruce and target', () => {
+            describe('When the user enters another word and selects the same language for source and target', () => {
               beforeEach(() => {
-                let english = { code: 'EN', display: "English" }
+                let english = { code: 'EN', display: "English" };
                 instance.input("another word");
                 instance.src(english);
                 instance.target(english);
-
               });
+
               describe('And presses the translate button', () => {
                 beforeEach(() => {
                   instance.translate();
                 });
+
                 it('It should display an error message to the user', () => {
-                  expect(instance.errorMessage()).to.equal("You can't choose the same language as source and target")
+                  expect(instance.errorMessage()).to.equal("You can't choose the same language as source and target");
                 });
+
                 it('It should not show the previous translation to the user', () => {
                   expect(instance.translation()).to.be.empty;
                 });
               });
-
             });
-
           });
         });
       });

@@ -12,6 +12,6 @@
                        optionsCaption: 'Please choose...'"></select></label>
         <button class="btn btn-default" type="submit" data-bind="click: translate, enable: isBtnTranslateEnable">Translate</button>
     </form>
-    <h4 data-bind="text: translation" class="text-success"></h4>
-    <h4 data-bind="text: errorMessage, visible: errorMessage().length" class="text-danger"></h4>
+    <p data-bind="text: translation" class="text-success"></p>
+    <p data-bind="text: errorMessage, visible: errorMessage().length" class="text-danger"></p>
 </div>
