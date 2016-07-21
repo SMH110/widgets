@@ -225,15 +225,15 @@
           });
 
           describe('When the API responded with data', () => {
-            let data;
+            let apiResponse;
 
             beforeEach(() => {
-              data = {
+              apiResponse = {
                 data: {
                   translations: [{ translatedText: 'some word' }]
                 }
               };
-              resolveJson(data);
+              resolveJson(apiResponse);
               return zurvan.waitForEmptyQueue();
             });
 
@@ -246,7 +246,7 @@
             });
 
             it('It should display the translation of input word', () => {
-              expect(instance.translation()).to.equal(data.data.translations[0].translatedText);
+              expect(instance.translation()).to.equal(apiResponse.data.translations[0].translatedText);
             });
 
             describe('When the user enters another word to translate', () => {
@@ -284,8 +284,8 @@
             describe('When the user resets the setting to the default and presses the translate button', () => {
               beforeEach(() => {
                 instance.input("");
-                instance.src("");
-                instance.target("");
+                instance.src(undefined);
+                instance.target(undefined);
                 instance.translate();
               });
 
