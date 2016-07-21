@@ -28,7 +28,7 @@
       }));
       return zurvan.interceptTimers().catch(() => { });
     });
-    
+
     afterEach(() => {
       sandbox.restore();
       resolveFetch = null;
@@ -61,7 +61,7 @@
         instance.translate();
       });
 
-      it('Translate button should be enabled', () => {
+      it('The translate button should be enabled', () => {
         expect(instance.isBtnTranslateEnable()).to.equal(true);
       });
 
@@ -71,7 +71,7 @@
 
     });
 
-    describe('When the user enters a word and chooses the same language as source and target and then clicks translate button', () => {
+    describe('When the user enters a word and chooses the same language as source and target and then clicks the translate button', () => {
       beforeEach(() => {
         let english = { code: 'EN', display: "English" };
         instance.input("word");
@@ -97,12 +97,12 @@
         instance.target(french);
       });
 
-      describe('And the user clicks translate button', () => {
+      describe('And the user clicks the translate button', () => {
         beforeEach(() => {
           instance.translate();
         });
 
-        it('It should disable translate button ', () => {
+        it('It should disable the translate button ', () => {
           expect(instance.isBtnTranslateEnable()).to.be.equal(false);
         });
 
@@ -123,7 +123,7 @@
             expect(instance.errorMessage()).to.be.equal(`Couldn't get translation. Please check your internet connection.`);
           });
 
-          describe('When the user clicks translate button again', () => {
+          describe('When the user clicks the translate button again', () => {
             beforeEach(() => {
               instance.translate();
             });
@@ -253,7 +253,7 @@
                 instance.target(french);
               });
 
-              describe('And presses translate button', () => {
+              describe('And presses the translate button', () => {
                 beforeEach(() => {
                   instance.translate();
                 });
@@ -275,6 +275,45 @@
                 });
               });
             });
+
+            describe('When the user rests the setting to the default and prsess the translate button', () => {
+              beforeEach(() => {
+                instance.input("");
+                instance.src("");
+                instance.target("");
+                instance.translate();
+              });
+
+              it('It should display an error message to the user', () => {
+                expect(instance.errorMessage()).to.equal("Please enter a word then choose source language and target language then click Translate!")
+              });
+              it('It should not show the previous translation to the user', () => {
+                expect(instance.translation()).to.be.empty;
+              });
+            });
+
+            describe('When the user enters another word and selects the same language for soruce and target', () => {
+              beforeEach(() => {
+                let english = { code: 'EN', display: "English" }
+                instance.input("another word");
+                instance.src(english);
+                instance.target(english);
+
+              });
+              describe('And presses the translate button', () => {
+                beforeEach(() => {
+                  instance.translate();
+                });
+                it('It should display an error message to the user', () => {
+                  expect(instance.errorMessage()).to.equal("You can't choose the same language as source and target")
+                });
+                it('It should not show the previous translation to the user', () => {
+                  expect(instance.translation()).to.be.empty;
+                });
+              });
+
+            });
+
           });
         });
       });
