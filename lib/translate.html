@@ -1,0 +1,17 @@
+<div class="translate">
+    <h3>Translate</h3>
+    <form action="">
+        <input type="text" placeholder="Enter your text" class="form-control" data-bind="value: input">
+        <label>From: <select class="form-control" data-bind="options: languages,
+                       optionsText: 'display',
+                       value: src,
+                       optionsCaption: 'Please choose...'"></select></label>
+        <label>To: <select class="form-control" data-bind="options: languages,
+                       optionsText: 'display',
+                       value: target,
+                       optionsCaption: 'Please choose...'"></select></label>
+        <button class="btn btn-default" type="submit" data-bind="click: translate, enable: isBtnTranslateEnable">Translate</button>
+    </form>
+    <p data-bind="text: translation" class="text-success"></p>
+    <p data-bind="text: errorMessage, visible: errorMessage().length" class="text-danger"></p>
+</div>

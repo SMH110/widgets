@@ -1,8 +1,4 @@
 {
-  "esnext": true,        // ES6 syntax support
-  "globals": {
-    "ko": true
-  },
-  "node": true,
-  "mocha": true
+  "esnext": true, // ES6 syntax support
+  "node": true
 }

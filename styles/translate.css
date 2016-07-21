@@ -1,0 +1,9 @@
+.translate .language {
+	width: 80px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.translate .instructions {
+	margin-bottom: 15px;
+}
