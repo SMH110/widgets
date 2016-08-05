@@ -1,25 +1,21 @@
-(function (factory) {
-  if (typeof define === 'function' && define['amd']) {
-    define(['chai', '../lib/weather', 'sinon', 'zurvan'], factory);
-  } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    factory(require('chai'), require('../lib/weather'), require('sinon'), require('zurvan'));
-  } else {
-    factory(chai, Weather, sinon, zurvan);
-  }
-} (function (chai, Weather, sinon, zurvan) {
-  'use strict';
-  const expect = chai.expect;
+'use strict';
+
+import {expect} from 'chai';
+import * as sinon from 'sinon';
+import * as zurvan from 'zurvan';
+import Weather = require('../lib/weather');
+
   describe('Weather component', () => {
     let instance, sandbox, resolveFetch, rejectFetch;
 
     beforeEach(() => {
-      instance = new Weather();
+      instance = Weather();
       sandbox = sinon.sandbox.create();
       if (typeof window === 'undefined') {
-        global.window = global;
+        (global as any).window = global;
       }
       if (window.fetch === undefined) {
-        window.fetch = function () { };
+        window.fetch = function () { } as any;
       }
       sandbox.stub(window, 'fetch', () => new Promise((resolve, reject) => {
         resolveFetch = resolve;
@@ -286,4 +282,3 @@
       });
     });
   });
-}));

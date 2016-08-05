@@ -1,14 +1,14 @@
 'use strict';
 
-module.exports = function () {
+module.exports = function (wallaby) {
   return {
     files: [
       // Application code
-      { pattern: 'lib/**/*.js', load: false },
-      { pattern: 'spec/mocha-setup.js', load: false }
+      { pattern: 'lib/**/*.ts', load: false },
+      { pattern: 'spec/mocha-setup.ts', load: false }
     ],
     tests: [
-      'spec/**/*spec.js'
+      'spec/**/*.spec.ts'
     ],
     env: {
       type: 'node'
@@ -16,6 +16,9 @@ module.exports = function () {
     setup: function () {
       require('./spec/mocha-setup');
     },
-    testFramework: 'mocha'
+    testFramework: 'mocha',
+    compilers: {
+      "**/*.ts": wallaby.compilers.typeScript({ module: 'commonjs', target: 2 })
+    }
   };
 };
