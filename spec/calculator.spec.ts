@@ -1,13 +1,6 @@
-(function (factory) {
-  if (typeof define === 'function' && define['amd']) {
-    define(['chai', '../lib/calculator'], factory);
-  } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    factory(require('chai'), require('../lib/calculator'));
-  } else {
-    factory(chai, Calculator);
-  }
-} (function (chai, Calculator) {
-  'use strict';
+ 'use strict';
+import * as chai from 'chai';
+import Calculator = require('../lib/calculator');
 
   const expect = chai.expect;
 
@@ -15,7 +8,7 @@
     let instance;
 
     beforeEach(() => {
-      instance = new Calculator();
+      instance = Calculator();
     });
 
     // This is a good spec (spec is another word for test)
@@ -307,4 +300,3 @@
 
 
   });
-}));

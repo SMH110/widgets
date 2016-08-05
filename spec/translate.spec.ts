@@ -1,22 +1,18 @@
-(function (factory) {
-  if (typeof define === 'function' && define['amd']) {
-    define(['chai', '../lib/translate', 'sinon', 'zurvan'], factory);
-  } else if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
-    factory(require('chai'), require('../lib/translate'), require('sinon'), require('zurvan'));
-  } else {
-    factory(chai, Translate, sinon, zurvan);
-  }
-} (function (chai, Translate, sinon, zurvan) {
-  'use strict';
-  const expect = chai.expect;
+'use strict';
+
+import {expect} from 'chai';
+import * as sinon from 'sinon';
+import * as zurvan from 'zurvan';
+import Translate = require('../lib/translate');
+
   describe('Translate component', () => {
     let instance, sandbox, resolveFetch, rejectFetch;
 
     beforeEach(() => {
-      instance = new Translate();
+      instance = Translate();
       sandbox = sinon.sandbox.create();
       if (typeof window === 'undefined') {
-        global.window = global;
+        (global as any).window = global;
       }
       if (window.fetch === undefined) {
         window.fetch = function () { };
@@ -325,4 +321,3 @@
       });
     });
   });
-}));
