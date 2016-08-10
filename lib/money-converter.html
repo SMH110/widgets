@@ -1,0 +1,15 @@
+<div class="money-converter">
+    <h3>Money Converter</h3>
+    <form action="">
+        <input type="text" placeholder="Amount" class="form-control" data-bind="value: amount">
+        <p><strong>Source Currency:</strong> USD</p>
+        <label>Currencies *<select class="form-control" data-bind="options: currencies,
+                       optionsText: 'display',
+                       value: currencyTarget,
+                       optionsCaption: 'Please choose a currency'"></select></label>
+        <button class="btn btn-default" type="submit" data-bind="click: convert, enable: isBtnConvertEnable">Convert</button>
+        <p data-bind="text: conversionResult" class="text-success"></p>
+        <p data-bind="text: errorMessage" class="text-danger"></p>
+    </form>
+
+</div>

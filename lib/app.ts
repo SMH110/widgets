@@ -21,6 +21,10 @@ function App() {
     widgets.push({ name: 'translate' });
   }
 
+  function addMoneyConverter() {
+    widgets.push({ name: 'money-converter' });
+  }
+
   function remove() {
     widgets.remove(this);
   }
@@ -31,6 +35,7 @@ function App() {
     addToDoList,
     addWeather,
     addTranslate,
+    addMoneyConverter,
     remove
   };
 }
@@ -53,6 +58,11 @@ ko.components.register('weather', {
 ko.components.register('translate', {
   viewModel: { require: 'lib/translate' },
   template: { require: 'text!lib/translate.html' }
+});
+
+ko.components.register('money-converter', {
+  viewModel: { require: 'lib/money-converter' },
+  template: { require: 'text!lib/money-converter.html' }
 });
 
 ko.applyBindings(App());
